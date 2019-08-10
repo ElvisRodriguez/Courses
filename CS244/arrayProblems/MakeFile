@@ -1,0 +1,18 @@
+all: alltest
+
+test1:
+	g++ problem1.cpp -o test1
+
+test2:
+	g++ problem2.cpp -o test2
+
+test3:
+	g++ problem3.cpp -o test3
+
+alltest: test1 test2 test3
+
+clean:
+	del test1.exe test2.exe test3.exe
+
+clean2:
+	rm -f test1 test2 test3
