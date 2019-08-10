@@ -1,0 +1,112 @@
+Name: Elvis Rodriguez
+Date: 1/31/18
+Professor: J. Reid
+Assignment no: 1
+
+Question 1:
+  If
+
+  A = you will study
+  B = you will do work
+  C = you will pass
+
+  Translate the following proposition wff into English statements:
+    [(A v B) ^ (A ^ B)' --> (C v C')] ^ [(A ^ B) --> C] ^ [(A v B)' --> C']
+
+  Answer:
+    [ (You will study or you will do work) and (it is false that you will study and you will do work)//
+    implies (you will pass or you will not pass) ] and [ (you will study and you will do work) implies//
+    you will pass ] and [ (it is false that you will study or you will do work) implies you will not pass ]
+
+Question 2:
+  Rewrite each statement into a propositional wff. Indicate what each statement letter will represent.
+    a) Pine trees are tall and prickly.
+    b) Mary will come to the party if and only if John goes to the party.
+
+  Answer:
+    For part a:
+      Let A = Pint trees are tall, let B = Pine trees are prickly.
+
+      A ^ B
+
+    For part b:
+      Let P = John goes to the party.
+      Let Q = Mary will come to party.
+
+      P <--> Q
+
+Question 3:
+  Write the truth table for each of the propositional wff:
+    a) A --> B <--> A' v B
+    b) (A v B)' <--> A' ^ B'
+
+  Answer:
+    For part a:
+      ------------------------------------------------------
+      | A | B | A'| A' v B | A --> B | A --> B <--> A' v B |
+      ------------------------------------------------------
+      | T | T | F |   T    |    T    |          T          |
+      ------------------------------------------------------
+      | T | F |   |   F    |    F    |          T          |
+      ------------------------------------------------------
+      | F | T | T |   T    |    T    |          T          |
+      ------------------------------------------------------
+      | F | F |   |   T    |    T    |          T          |
+      ------------------------------------------------------
+
+  Answer:
+    For part b:
+      ------------------------------------------------------------
+      | A | B | (A v B)'| A'| B'| A' ^ B'| (A v B)' <--> A' ^ B' |
+      ------------------------------------------------------------
+      | T | T |    F    | F | F |    F   |           T           |
+      ------------------------------------------------------------
+      | T | F |    F    |   | T |    F   |           T           |
+      ------------------------------------------------------------
+      | F | T |    F    | T |   |    F   |           T           |
+      ------------------------------------------------------------
+      | F | F |    T    |   |   |    T   |           T           |
+      ------------------------------------------------------------
+
+  Question 4:
+    Program can be found in the attached file labeled "assignment1B.cpp"
+
+  Extra Credit:
+    Prove or disprove that the wff:
+        A v B --> (B' --> A)
+    is a valid argument by using a truth table, the Tautology Test,
+    and the derivation rules.
+
+    Answer:
+      Truth Table:
+        -------------------------------------------------------
+        | A | B | B'| A v B | B' --> A | A v B --> (B' --> A) |
+        -------------------------------------------------------
+        | T | T | F |   T   |     T    |          T           |
+        -------------------------------------------------------
+        | T | F | T |   T   |     T    |          T           |
+        -------------------------------------------------------
+        | F | T |   |   T   |     F    |          T           |
+        -------------------------------------------------------
+        | F | F |   |   F   |     F    |          T           |
+        -------------------------------------------------------
+
+      Tautology Test:
+        Let:
+          P = A v B = T
+          Q = (B' --> A) = F
+
+          In order for Q to maintain it's truth value, A and B must equal false.
+          However, if both A and B are false, P cannot maintain it's truth value.
+          Thus either B or A must have a second truth value, which would be a contradiction.
+          Therefore, P --> Q is a tautology.
+
+      Derivation Rules:
+        ---------------------------------------------------------
+        |         Steps            |            Proof           |
+        ---------------------------------------------------------
+        | 1. A v B                 |        Hypothesis          |
+        | 2. B v A                 |        Commutative         |
+        | 3. (B')' v A             |      Double Negation       |
+        | 4. B' --> A              |        Implication         |
+        ---------------------------------------------------------

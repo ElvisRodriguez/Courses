@@ -1,0 +1,14 @@
+Lab 3:
+Group Members:
+- Elvis Rodriguez
+- Jonathan James
+- Nusrath Ahmed
+
+S = {x ∈ N | x ≤ 20}
+A = {x ∈ S | (∃y ∈ Z)(x = 4y)}
+B = {x ∈ S | (∃y ∈ Z)(∃z ∈ Z)(4y + xz = 2)}
+C = {x ∈ S | (∃y ∈ A)(x = y + 5)}
+D = {x ∈ S | (∃y ∈ N)(x = 2y + 1)}
+E = {x ∈ S | x < 10 ∧ (∀y ∈ S)(∀z ∈ S)(y ≤ z < x → x 6= yz)}
+F = {x ∈ S | (∃y ∈ N)(35 = xy)}
+G = {x ∈ S | (∃y ∈ Z)(∃z ∈ Z)(10y + xz = 1)}

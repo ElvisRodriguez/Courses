@@ -1,0 +1,157 @@
+Name: Elvis Rodriguez
+Date: 4/26/18
+
+1. Use the multiplication and addition principles to find the count of each of the following events
+
+  (a) If a man has 3 suits, 5 shirts, 4 ties and 2 shoes, how many outfits combinations can he
+      wear?
+
+        3 * 5 * 4 * 2 = 120
+        He can wear 120 outfit combinations.
+
+  (b) If computer science has 12 types of certifications, mathematics has 5 types of certifications,
+      and engineering has 10 types of certifications, how many certifications are available?
+
+        12 + 5 + 10 = 27
+        There are 27 certifications available.
+
+  (c) At a restaurant, one can choose from one (1) of two (2) dinner specials. Either choose
+      to have 1 out of 4 appetizers, 2 out of 6 entrees and 1 out of 3 beverages; or you can
+      choose 2 out of 6 appetizers, 1 out of 6 entrees and 2 out of 5 desserts. How many dinner
+      combinations are possible?
+
+        4 * (6 * 5) * 3 = 360
+        (6 * 5) * 6 * (5 * 4) = 3600
+        3600 + 360 = 3960
+        There are 3960 possible dinner combinations.
+
+  (d) How many binary strings of length 8 are palindromes?
+
+        2^4 binary strings.
+
+2. Use the pigeonhole principle to find the count of each of the following events.
+
+  (a) If k pairs of shoes are placed in a bag, how many shoes do you have to remove from the
+      bag to guaranteed that two complete pair were removed?
+
+        k + 2 shoes.
+
+  (b) How many cards must be drawn from a standard 52-card deck to guarantee a drawing a
+      pair of club card(s?)?
+
+        4 suits of 13 cards each, worst case, every suit has to be removed.
+        Worst case: 13(Spades) + 13(Hearts) + 13(Diamonds) + 2(Clubs)
+        Worst case: 41 cards must be removed to guarantee drawing a pair of club
+
+  (c) If a jar contains k black marbles and k white marbles, how many marbles must be
+      removed to guarantee collecting k − 2 marbles of one of the colors?
+
+        2k - 5 marbles must be removed
+
+  (d) Prove that in a group of 25 people that at least 3 people were born in the same month?
+
+        Assuming worst case: 12 containers (1 for each month).
+        Assume each person is distributed evenly among the containers.
+        If each container held 2 people, the sum of the count of each container
+        would be 24, with 1 person left over; that 1 person must belong to some
+        container, therefore there will be at least 1 container with 3 people (i.e
+        3 people born in the same month).
+
+3. Use permutation and combination to find the count of each of the following events.
+
+  (a) If there is a committee of 13 people, how many president-vice president pairs are possible?
+
+        let n = 13, r = 2
+        let P equal the number of possible president-vice president pairs
+        P(n,r) = n!/(n-r)!
+               = 13!/(13-2)!
+               = 13!/11!
+               = (13 * 12 * 11!)/11!
+               = 13 * 12 * 1
+               = 156 possible president-vice president pairs.
+
+
+  (b) From a standard deck of 52 cards, how many five card hands contain a full house (that is,
+      three cards with the same face, and the additional cards are a pair)?
+
+        The first part of the hand, the 3-of-a-kind, we have 13 choose 1 choices,
+        as for their suits, we have 4 choose 3 possible suits.
+        For the rest of the hand, the pair, we have 12 choose 1 choices, as for
+        their suits, we have 4 choose 2 possible suits.
+        Therefore we have:
+        C(13,1) * C(4,3) * C(12,1) * C(4,2)
+        13 * 4 * 12 * 6
+        3744 five card hands that contain a full house.
+
+
+  (c) If there is a group of 16 people, how many 3-person committees are possible?
+
+        let n = 16, r = 3
+        let C equal the number of possible 3-person committees.
+        C(n,r) = n!/(r!(n-r)!)
+               = 16!/(3!(16-3)!)
+               = 16!/(3!*13!)
+               = (16 * 15 * 14 * 13!)/(3!*13!)
+               = (16 * 15 * 14 * 1)/(3! * 1)
+               = 3360/6
+               = 560 possible 3-person committees
+
+  (d) If a license plate consists of seven characters that can be letters or digits, how many license
+      plates are possible with repetition? without repetition?
+
+        There are 26 letters and 10 digits meaning there are 36 choices for each
+        place of the license plate.
+        With repetition:
+          36^7 = 78364164096 possible license plates
+        Without repetition:
+          36 * 35 * 34 * 33 * 32 * 31 * 30 = 42072307200 possible license plates
+
+4. The following table shows the enrollment of freshmen students in some of STEM
+   fields for 2018
+       S/G:   Biology   Mathematics   Computer Science  Physics   Chemistry   Total
+       Men:   250       300           850               700       400         2500
+       Women: 700       450           200               550       600         2500
+       Total: 950       750           1050              1250      1000        5000
+
+   (a) If a student is selected at random, what is the probability of the
+       student being a woman enrolled in physics?
+
+          There are 550 women in physics.
+          There are 5000 total students.
+          550/5000
+          55/500
+          11/100
+          11% probability that a randomly selected student is a woman enrolled
+              in physics.
+
+   (b) If a student is selected at random, what is the probability of the
+       student being enrolled in biology or chemistry?
+
+          There are 950 students enrolled in biology.
+          There are 1000 students enrolled in chemistry.
+          1950/5000
+          195/500
+          39/100
+          39% probability that a randomly selected student is enrolled in
+              biology or chemistry.
+
+   (c) If a student is selected at random, what is the probability of the
+       student not being enrolled in computer science?
+
+          There are 1050 students enrolled in computer science.
+          Therefore there are 3950 students NOT enrolled in computer science.
+          3950/5000
+          395/500
+          79/100
+          79% probability that a randomly selected student is not enrolled in
+              computer science.
+   (d) If a student is selected at random, what is the probability of the
+       student being enrolled in computer science given that the student is
+       a man?
+          Probability of an event E given F.
+          Probability of F = 2500/5000 = 1/2.
+          Probability of E intersect F = 850/5000.
+          Probability of E|F = (17/100)/(50/100) = 17/50
+          34% probability.
+
+5. See "assignment5b.cpp"
