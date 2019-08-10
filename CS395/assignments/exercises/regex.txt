@@ -1,0 +1,20 @@
+A. {w | w begins with a 1 and ends with a 0}
+--> 1Σ*0
+B. {w | w contains at least three 1s}
+--> Σ*1Σ*1Σ*1Σ*
+C. {w | w contains the substring 0101}
+--> Σ*0101Σ*
+D. {w | w has length at least 3 and its third symbol is a 0}
+--> ΣΣ0Σ*
+E. {w | w starts with a 0 and has odd length, or starts with 1 and has even length}
+--> 0(ΣΣ)* U 1Σ(ΣΣ)*
+F. {w | w doesn't contain the substring 110}
+-->
+G. {w | the length of w is at most 5}
+--> Σ U ΣΣ U ΣΣΣ U ΣΣΣΣ U ΣΣΣΣΣ
+H. {w | w is any string except 11 and 111}
+--> 0* U Σ U (0Σ)*
+I. {w | every odd position of w is a 1}
+--> (1Σ)*
+J. {w | w contains at least two 0s and at most one 1}
+--> 00+1 U 100+ U 0+10+

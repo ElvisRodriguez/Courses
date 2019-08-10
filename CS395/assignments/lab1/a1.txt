@@ -1,0 +1,166 @@
+1. Select the sets that are identical to the set {7, 7, 7, 14, 21, 14, 28}
+
+  A. {7, 7, 7, 14, 14, 21, 28}
+  C. {14, 7, 14, 7, 21, 7, 28}
+  D. {7, 14, 21, 28}
+  F. {7, 14, 7, 14, 7, 21, 7, 28}
+
+2. Select the proper subsets of the set {7, 14, 21, 28, 35, 42, 49, 56, 63, 70}
+
+  A. {7, 14, 21, 28}
+  E. {70}
+  F. {70, 70, 63, 63, 56, 56, 49, 49}
+
+3. Indicate which sets below are singleton sets and which ones are unordered
+   pairs:
+
+  A. {7} --> singleton
+  B. {1, 7} --> unordered pair
+  C. {7, 14, 21, 28} --> Neither
+  D. {70, 63} --> unordered pair
+  E. {70} --> singleton
+  F. {70, 70} --> unordered pair
+
+4. Examine the following formal descriptions of sets so that you understand
+   which members they contain. Write a short informal English description of
+   each set.
+
+  A. {1,3,5,7, ...}
+    --> Set of all odd numbers starting from 1.
+  B. {...,−4,−2,0,2,4, ...}
+    --> Set of all positive/negative even numbers.
+  C. {n|n=2m for some m in N}
+    --> Set of all even natural numbers.
+  D. {n|n=2m for some m in N, and n=3k for some k in N}
+    --> Set of all natural numbers with 2 and 3 as factors.
+  E. {w|w is a string of 0s and 1s and w equals the reverse of w}
+    --> Set of palindromic binary strings.
+  F. {n|n is an integer and n=n+1}
+    --> Empty Set.
+
+5. Write formal descriptions of the following sets.
+
+  A. The set containing the numbers 1, 10, and 100
+    --> {1, 10, 100}
+  B. The set containing all integers that are greater than 5
+    --> {6, 7, 8, 9, ...}
+  C. The set containing all natural numbers that are less than 5
+    --> {n|n = m for some m in N and n < 5}
+  D. The set containing the string aba
+    --> {"aba"}
+  E. The set containing the empty string
+    --> {""}
+  F. The set containing nothing at all
+    --> {}
+
+6. Let A be the set {x,y,z} and B be the set {x,y}:
+  A. Is A a subset of B?
+    --> No
+  B. Is B a subset of A?
+    --> Yes
+  C. What is A∪B?
+    --> {x, y, z}
+  D. What is A∩B?
+    --> {x, y}
+  E. What is A×B?
+    --> {{x,x}, {x,y}, {y,x}, {y,y}, {z,x}, {z,y}}
+  F. What is the power set of B?
+    --> {{}, {x}, {y}, {x,y}}
+
+7. Let A be the set {x,y,z}, provide the power set of A:
+
+  --> {{}, {x}, {y}, {z}, {x,y}, {x,z}, {y,z}, {x,y,z}}
+
+8. If C is a set with c elements, how many elements are in the power set of C?
+   Explain.
+
+   --> 2^c because any subset of the set C either contains or does not contain
+       each element of C.
+
+9. a) A sequence with 2 elements, or 2-tuple, is also called:
+    --> An ordered pair.
+   b) A set with 2 members is also called:
+    --> An unordered pair.
+
+10. Provide the set of all ordered pairs whose elements are As and Bs.
+
+  --> (A,B), (B,A)
+
+11. Provide the set of all unordered pairs whose elements are As and Bs.
+
+  --> {A,B}
+
+12. Let A be the set {a,b,c} and B be the set {a,b}, provide the Cartesian
+    product A × B:
+
+  --> {{a,a}, {a,b}, {b,a}, {b,b}, {c,a}, {c,b}}
+
+13. If A is a set that has a elements and B is a set that has b elements, how
+    many elements are in A × B? Explain your answer.
+
+  --> a x b elements are in A X B, this is because for every element in set A,
+      an ordered pair is formed with each element in set B.
+
+14. Let X be the set {1,2,3,4,5} and Y be the set {6,7,8,9,10}. (Follow Graph)
+
+  A. What is the value of f(2)?
+    --> 7
+  B. What are the range and domain of f?
+    --> domain: X, range: {6,7}
+  C. What is the value of g(2, 10)?
+    --> 6
+  D. What are the range and domain of g?
+    --> domain: X ∪ Y, range: Y
+  E. What is the value of g(4, f (4))?
+    --> 8
+
+15. For each part, give a relation that satisfies the condition.
+
+  A. Reflexive and symmetric but not transitive
+    --> {x,y| where x and y are Real numbers and xy>=0}
+  B. Reflexive and transitive but not symmetric
+    --> {x,y| where x and y are Real numbers and x=y}
+  C. Symmetric and transitive but not reflexive
+    --> {x,y| where x and y are Real numbers and x!=y}
+
+16. Consider the undirected graph G=(V,E) where V, the set of nodes, is
+    {1,2,3,4} and E, the set of edges, is {{1, 2}, {2, 3}, {1, 3}, {2, 4},
+    {1, 4}}.
+
+  A. Draw the graph G.
+     -------------
+     |           |
+     1 --- 2 --- 4
+     |     |
+     -- 3 --
+
+  B. What are the degrees of each node?
+
+    Node | Degree
+    -------------
+      1  |   2
+      2  |   3
+      3  |   2
+      4  |   1
+
+17. Consider the directed graph G=(V,E) where V, the set of nodes, is
+    {1,2,3,4} and E, the set of edges, is {{1, 2}, {1, 3}, {2, 1}, {2, 3},
+    {2, 4}, {1, 4}, {4, 1}}.
+
+  A. Draw the graph G.
+
+    ---------------
+    |             |
+    v             v
+    1 <---> 2 --> 4
+    |       |
+    --> 3 <--
+
+  B. What is the indegree and outdegree of each node?
+
+    Node | indegree | outdegree
+    ---------------------------
+      1  |    2     |    3
+      2  |    1     |    3
+      3  |    2     |    0
+      4  |    2     |    1

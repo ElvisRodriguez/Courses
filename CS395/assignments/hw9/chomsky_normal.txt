@@ -1,0 +1,25 @@
+Convert the following CFG to chomsky normal form:
+  A --> BAB | B | ϵ
+  B --> 00 | ϵ
+
+First add an S to be the new start variable with the rule:
+  New rule:
+    S --> A
+
+Then eliminate any rule that has a non starting variable becoming an empty
+string, in this case the rule B --> ϵ.
+Then add rules to other variables containing B to account for the empty string
+possibility.
+  New rules:
+    A --> AB | BA | A
+
+Then eliminate any rules with more than 3 variables, creating a new variable
+for any instance removed.
+  New rule:
+    A' --> BA
+
+This gives us our new CFG:
+  S --> A
+  A --> A'B | B | AB | BA | A | ϵ
+  A' --> BA
+  B --> 00

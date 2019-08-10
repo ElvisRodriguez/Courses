@@ -1,0 +1,61 @@
+1. Where did Turing go to college?
+
+  King's College (a branch of Cambridge)
+
+2. What was the first large problem Turing solved while he was still in college?
+   Briefly describe what the problem is.
+
+   The decision problem, which was proving that there is no such machine or
+   algorithm that can take an input statement and determine if it is
+   universally valid.
+
+3. What did Turing do during WWII?
+
+  Turing worked as a crypto-analyst for the Allies, cracking ciphers and
+  eventually building a machine that could automatically decrypt messages
+  called the Bombe.
+
+4. Explain what the Bombe machine does.
+
+  A device used to decrypt German enigma-machine-encrypted messages during
+  WWII. It would try hundreds of combination per second to decipher messages.
+
+5. What was the goal of Turing after the war while working at NPL?
+
+  To create artificial intelligence so complex that it could fool a human
+  into thinking it itself was a human.
+
+6. What is the qualification a computer must meet for it to be considered
+   artificial intelligence?
+
+   It must pass the turing test, where the computer and another human both
+   answer questions given by a human judge, and that judge must determine
+   which (if any) of the responses are from a machine. If they are unable to,
+   that machine is considered to pass.
+
+7. How did Turing die? What was he convicted of, and what was his sentencing?
+
+  Suicide by cyanide-injected apple. He was convicted of homosexuality, and
+  sentenced to chemical castration.
+
+8. What is the Turing Law?
+
+  An amnesty law to pardon men who were convicted of homosexual acts and
+  punished for them. This was created shortly after Turing's pardon in 2013.
+
+9. What is the Turing Test?
+
+  A computer and a human both answer questions given by a human judge, and that
+  judge must determine which (if any) of the responses are from a machine. If
+  they are unable to, that machine is considered to pass.
+
+10. What is the Loebner Prize?
+
+  It is the oldest turing test contest, where several chatbots compete for
+  sounding the most 'human.'
+
+11. Has any of the chatbots competing in the Loebner Prize managed to fool a
+    judge into believing it was human?
+
+    Yes, Elbot of Artifical Solutions managed to fool three judges into
+    believing it was human during the 2008 competition.

@@ -1,0 +1,65 @@
+1. Indicate the output of M1 (accept/reject) for each input string:
+  a) 0
+  --> Reject.
+  b) 1
+  --> Accept.
+  c) 000111000
+  --> Reject.
+  d) 000000000
+  --> Reject.
+  e) 111111111
+  --> Accept.
+  f) 0101010101
+  --> Accept.
+  g) 1111111110
+  --> Reject.
+  h) 1111111100
+  --> Accept.
+  i) 0001000
+  --> Reject.
+  j) 000010000
+  --> Accept.
+
+2. Provide the formal definition of the following automata:
+  M1 = ({q0,q1}, {0,1}, δ, q0, {q1})
+  --> Where δ is given by:
+    ------------------
+    |    |  0  |  1  |
+    ------------------
+    | q0 | q0  | q1  |
+    ------------------
+    | q1 | q0  | q1  |
+    ------------------
+  M2 = ({0,1,2}, {a,b,c}, δ, 0, {0,1})
+  --> Where δ is given by:
+    -----------------
+    |   | a | b | c |
+    -----------------
+    | 0 | 0 | 0 | 1 |
+    -----------------
+    | 1 | 2 | 2 | 2 |
+    -----------------
+    | 2 | 2 | 2 | 2 |
+    -----------------
+  M3 = ({0,1,2}, {0,1}, δ, 0, {0,1})
+  --> where δ is given by:
+    -------------
+    |   | 0 | 1 |
+    -------------
+    | 0 | 0 | 1 |
+    -------------
+    | 1 | 2 | 1 |
+    -------------
+    | 2 | 2 | 2 |
+    -------------
+
+3. Given in separate file.
+
+4. What is the language of each of the previous autotmata? (M1, M2, M3, M4)
+  --> M1 = {w|w where w ends with 1}
+  --> M2 = {w|w where w begins with a or b, ends with either a, b, or c, but
+              does not contain more than 3 elements and is not empty}
+  --> M3 = {w|w where w begins with any number of 0s, then any number of 1s}
+  --> M4 = {w|w where w must contain an even amount of u's and d's}
+
+5. Given in separate file.

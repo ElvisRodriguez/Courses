@@ -1,0 +1,121 @@
+Part 1:
+  Give the derivations and parse trees for the following strings:
+  A. the boy sees a flower
+    Derivation:
+    <sentence> --> <noun-phrase><verb-phrase>
+               --> <cmplx-noun><verb-phrase>
+               --> <article><noun><verb-phrase>
+               --> the <noun><verb-phrase>
+               --> the boy <verb-phrase>
+               --> the boy <cmplx-verb>
+               --> the boy <verb><noun-phrase>
+               --> the boy sees <noun-phrase>
+               --> the boy sees <cmplx-noun>
+               --> the boy sees <article><noun>
+               --> the boy sees a <noun>
+               --> the boy sees a flower
+    Parse Tree:
+                          <sentence>
+                          /         \
+              <noun-phrase>        <verb-phrase>
+                    |                     |
+            <cmplx-noun>              <cmplx-verb>
+            /         \               /          \
+    <article>        <noun>      <verb>       <noun-phrase>
+        |              |           |               |
+       The            boy         sees         <cmplx-noun>
+                                               /          \
+                                          <article>     <noun>
+                                              |            |
+                                              a          flower
+
+
+  B. a girl with a flower likes a boy
+    Derivation:
+    <sentence> --> <noun-phrase><verb-phrase>
+               --> <cmplx-noun><prep-phrase><verb-phrase>
+               --> <article><noun><prep-phrase><verb-phrase>
+               --> a <noun><prep-phrase><verb-phrase>
+               --> a girl <prep-phrase><verb-phrase>
+               --> a girl <prep><cmplx-noun><verb-phrase>
+               --> a girl with <cmplx-noun><verb-phrase>
+               --> a girl with <article><noun><verb-phrase>
+               --> a girl with a <noun><verb-phrase>
+               --> a girl with a flower <verb-phrase>
+               --> a girl with a flower <cmplx-verb>
+               --> a girl with a flower <verb><noun-phrase>
+               --> a girl with a flower likes <noun-phrase>
+               --> a girl with a flower likes <cmplx-noun>
+               --> a girl with a flower likes <article><noun>
+               --> a girl with a flower likes the <noun>
+               --> a girl with a flower likes the boy
+    Parse Tree:
+                                  <sentence>
+                                 /          \
+                      <noun-phrase>         <verb-phrase>
+                     /            \                    |
+          <cmplx-noun>       <prep-phrase>        <cmplx-verb>
+         /          \       /            \        /           \
+    <article>   <noun>   <prep>  <cmplx-noun>  <verb>      <noun-phrase>
+        |          |        |     /        \       |             |
+        a         girl     with  <article><noun>  likes      <cmplx-noun>
+                                    |        |                /        \
+                                    a      flower          <article>  <noun>
+                                                               |         |
+                                                               a        boy
+
+Part 2:
+  Give the derivations and parse trees for the following strings:
+  A. a cat napped
+    Derivation:
+    <sentence> --> <article><noun><verb>
+               --> a <noun><verb>
+               --> a cat <verb>
+               --> a cat napped
+    Parse Tree:
+                <sentence>
+              /     |      \
+      <article>   <noun>   <verb>
+          |         |         |
+          a        cat      napped
+  B. a cat barked
+    Derivation:
+    <sentence> --> <article><noun><verb>
+               --> a <noun><verb>
+               --> a cat <verb>
+               --> a cat barked
+    Parse Tree:
+                <sentence>
+              /     |      \
+      <article>   <noun>   <verb>
+          |         |         |
+          a        cat      barked
+Part 3:
+  Give the derivations and parse trees for the following strings:
+  A. abba
+    Derivation:
+    <palindromes> --> a<palindromes>a
+                  --> ab<palindromes>ba
+                  --> ab<empty>ba
+                  --> abba
+    Parse Tree:
+        <palindromes>
+      /      |       \
+     a  <palindromes> a
+       /     |       \
+      b <palindromes> b
+             |
+          <empty>
+  B. babab
+    Derivation:
+    <palindromes> --> b<palindromes>b
+                  --> ba<palindromes>ab
+                  --> babab
+    Parse Tree:
+        <palindromes>
+      /      |       \
+      b  <palindromes> b
+       /     |       \
+      a <palindromes> a
+             |
+             b

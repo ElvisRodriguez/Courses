@@ -1,0 +1,38 @@
+For each of the following languages, give two strings that are members and two
+strings that are not members—a total of four strings for each part. Assume the
+alphabet Σ = {a,b} in all parts.
+
+-------------------------------------------------
+| No. |     regex    |  Members  |  Non-Members |
+-------------------------------------------------
+|  a  |      a*b*    |    a, ab  |    ba, aba   |
+-------------------------------------------------
+|  b  |    a(ba)*b   |  abab, ab |     aab, a   |
+-------------------------------------------------
+|  c  |    a* U b*   |    a, b   |    ba, aba   |
+-------------------------------------------------
+|  d  |     (aaa)*   |{empty},aaa|    b, aba    |
+-------------------------------------------------
+|  e  |  Σ*aΣ*bΣ*aΣ* | babab,aba |     b, a     |
+-------------------------------------------------
+|  f  |   aba U bab  | aba, bab  |  baab, abba  |
+-------------------------------------------------
+|  g  |   (e U a)b   |   ab, b   |     ba, bb   |
+-------------------------------------------------
+|  h  |(a Uba U bb)Σ*|   a, ba   |  {empty}, b  |
+-------------------------------------------------
+
+Give regular expressions generating the following languages.
+Assume the alphabet Σ = {0,1} in all parts.
+
+a. {w | w begins with a 1 and ends with a 0}
+
+  regex --> 1Σ*0
+
+b. {w | w contains at least three 1s}
+
+  regex --> Σ*1Σ*1Σ*1Σ*
+
+c. {w | w contains the substring 0101}
+
+  regex --> Σ*0101Σ*

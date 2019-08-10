@@ -1,0 +1,29 @@
+Design a CFG for the language containing all strings with an odd number of 1’s:
+
+First create DFA:
+
+            0                       0
+            ^                       ^
+            |-->>>-->>>-1->>>-->>>--|
+            v                       v
+            q0                      q1 (accept state)
+            |--<<<--<<<-1-<<<--<<<--|
+
+Then create a variable for every state: R0, R1.
+Letting R0 also be our start variable.
+Let the variable representing the accept state (R1) have a rule R1 --> ϵ
+
+Resulting CFG is as follows:
+
+R0 --> 1(R1) | 0(R0)
+R1 --> 1(R0) | 0(R1) | ϵ
+
+Test with an example string: "11010"
+
+R0 --> 1(R1)
+   --> 11(R0)
+   --> 110(R0)
+   --> 1101(R1)
+   --> 11010(R1)
+   --> 11010ϵ
+   --> 11010

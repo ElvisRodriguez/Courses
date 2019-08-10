@@ -1,0 +1,40 @@
+Show the the string:
+  "the girl touches the boy with the flower"
+Has two different derivations in the grammar given.
+
+First Derivation Tree:
+        +---------<sentence>----------------+
+        |                                   |
+  <noun-phrase>                +--------<verb-phrase>----------+
+       |                       |                               |
++-<cmplx-noun>---+     +---<cmplx-verb>---+            +-<prep-phrase>---+
+|                |     |                  |            |                 |
+<article>     <noun> <verb>        <noun-phrase>     <prep>    +<cmplx-noun>-+
+    |           |      |                 |              |      |             |
+    |           |      |        +---<cmplx-noun>---+    |   <article>     <noun>
+    |           |      |        |                  |    |       |            |
+    |           |      |    <article>           <noun>  |       |            |
+    |           |      |        |                  |    |       |            |
+   The         girl  touches   the               boy   with    the        flower
+
+Second Derivation Tree:
+         +---------<sentence>---------+
+         |                            |
+   <noun-phrase>                 <verb-phrase>
+         |                            |
+  +<cmplx-noun>+       +---------<cmplx-verb>-------+
+  |            |       |                            |
+<article>    <noun>  <verb>          +---------<noun-phrase>---+
+    |           |      |             |                         |
+    |           |      |    +----<cmplx-noun>---+      +-<prep-phrase>--+
+    |           |      |    |                   |      |                |
+    |           |      |  <article>          <noun>  <prep>  +-<cmplx-noun>-+
+    |           |      |      |                 |       |    |              |
+    |           |      |      |                 |       |  <article>     <noun>
+    |           |      |      |                 |       |      |            |
+   The         girl touches  the               boy    with    the        flower
+
+In the second derivation, the sentence reads as expected, however in the first
+derivation, the sentence might be parsed as:
+"The girl touches with the flower the boy" (assuming a sentence is created
+based on how early the non-terminal appears in the parse tree)
