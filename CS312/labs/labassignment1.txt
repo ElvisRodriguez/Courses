@@ -1,0 +1,35 @@
+1. How exactly is an algorithm defined in the video?
+   A set of steps to accomplish a task.
+
+2. List four algorithms mentioned in the video and their application(s).
+   Audio/video compression algorithms (for streaming video/audio feeds).
+   Route finding algorithms (finding a good route from point A to B).
+   Rendering algorithms (Correct shading of 3d models in a game/movie).
+   Optimization and scheduling algorithms (arrangement and rearrangement of
+   solar panels on the ISS).
+
+3. How do computer scientists measure the efficiency of an algorithm? Why is this better than simply running the code and timing how long it takes to run?
+   They use asymptotic analysis which allows them to measure the efficiency of an algorithm regardless of the hardware that program's running on, what
+   language is was written or the size of the input.
+
+4. After completing the Guessing Game section of the Khan Academy lesson, answer the following questions:
+
+   A. How many guesses did it take you to find the number on the game with numbers 1 to 300?
+      8 guesses.
+
+   B. Explain, in your own words, the technique that you used when deciding what number to guess next.
+      I used a binary search approach, starting at the halfway point of the set of available numbers,
+      with each subsequent guess always being at the halfway point until I reached the answer.
+
+   C. Why should you never need more than 9 guesses? (Can you think of a mathematical explanation)?
+      You wouldn't need any more than 9 guesses because the maximum amount of guesses when using a
+      binary approach is log2(the amount of numbers) and in this case log2 of 300 is less than 9.
+
+   D. What is the max. number of guesses it would take if the numbers were from 1 to 1,000,000?
+      It would be log2(1000000) or 17 guesses.
+
+   E. Can you provide a formula for the max. number of guesses for numbers in the range between 1 to N
+      log2(N)
+      
+   F. What is the big-O time of the formula you provided?
+      O(log n)

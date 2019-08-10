@@ -1,0 +1,13 @@
+Question 1:
+  The insert function is implementing lines 5 through 8 of the
+  insertion-sort algorithm.
+
+Question 2:
+  Part A:
+  It is the finding the position in array A where the key is less than or
+  equal to all values after its position and is greater than or equal to
+  all values preceding its position. For each time the function finds a
+  value at an index of A greater than the key, that value is moved further
+  forward in the array until the key reaches it's appropriate (sorted) position.
+  Part B:
+  The function assumes that the subset of array A[0:i] is already sorted.

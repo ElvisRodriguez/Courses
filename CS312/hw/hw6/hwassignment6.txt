@@ -1,0 +1,25 @@
+1. In your own words, explain what each of the following statements mean:
+
+  A. T(n) is Θ(g(n))
+
+    This means that the growth rate (n increasing) of T(n) is the same as the
+    growth rate of g(n) and g(n) describes the exact (or tight) bound of T(n).
+
+  B. T(n) is O(g(n))
+
+    The growth rate of T(n) will always be less than or equal to the growth
+    rate of g(n) and g(n) describes the upper bound of T(n).
+
+  C. T(n) is Ω(g(n))
+
+    The growth rate of T(n) will always be greater than or equal to the growth
+    rate of g(n) and g(n) describes the lower bound of T(n)
+
+
+2. Explain why the statement, "The running time of algorithm A is at least
+   O(n^2)," is meaningless.
+
+    It is meaningless because O-notation describes the upper bounds of a
+    a function/algorithm and is used to describe the max amount of steps that
+    an algorithm will take to execute. This means that 'Algorithm A' can very
+    well take fewer than n^2 steps to execute thus making the statement false.

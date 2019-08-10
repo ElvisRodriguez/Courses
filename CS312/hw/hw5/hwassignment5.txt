@@ -1,0 +1,88 @@
+Exercises: List the ordered pairs of each array
+1. [14, 15, 20, 16, 10]
+
+  (14, 15), (14, 20), (14, 16), (15, 20), (15, 16)
+
+2. [4, 5, 6, 7, 8]
+
+  (4, 5), (4, 6), (4, 7), (4, 8), (5, 6), (5, 7), (5, 8), (6, 7), (6, 8), (7, 8)
+
+3. [60, 50, 40, 30, 20]
+
+  None
+
+4. [20, 60, 50, 40, 30]
+
+  (20, 60), (20, 50), (20, 40), (20, 30)
+
+5a. What array of size n has the highest number of ordered pairs?
+
+  An array of the form [1, 2, 3, ... n-2, n-1, n].
+  Where every element of the array is only 1 larger than the previous element.
+
+5b. How many ordered pairs does it have in terms of n?
+
+  summation(i from 1 to n) ordered pairs or (n*(n-1)/2) ordered pairs
+
+Task 1: Give an algorithm to find the ordered_pairs in an input array A of size
+        n. Specify the running time of your algorithm in theta (Θ) notation
+
+  Find_ordered_pairs(A)
+   result = []
+   for i = 0 to n:
+     for j = i+1 to n:
+        if A[i] < A[j]:
+          result.append(A[i], A[j])
+   return result
+
+   Runtime: Θ(n^2)
+
+Exercises: How many ordered pairs are there in the following (sorted) subarrays?
+
+6. L = [4, 5, 10], R = [1, 3, 8]
+
+  ordered_pairs(L) = 3
+    (4,5), (4,10), (5,10)
+  ordered_pairs(R) = 3
+    (1, 3), (1, 8), (3, 8)
+  ordered_pairs(L, R) = 6
+
+7. L = [4, 5, 6], R = [7, 8, 9]
+
+  ordered_pairs(L) = 3
+    (4, 5), (4, 6), (5, 6)
+  ordered_pairs(R) = 3
+    (7, 8), (7, 9), (8, 9)
+  ordered_pairs(L, R) = 6
+
+Question 1. Explain why we introduced the following change in the pseudocode:
+           "increment ordered_pairs by the number of items to the right of j +1"
+
+  This allows the modified merge function to count the number of ordered pairs
+  because every element to the right of R[j] is larger than L[i] and therefore
+  L[i] creates an ordered pair with each of those elements. The +1 is to include
+  the ordered pair of L[i] and R[j] themselves.
+
+Question 2. Briefly describe what the assert line in the first block of
+            comments is for.
+
+  It's making sure that the modified mergesort function returns the accurate
+  number of ordered_pairs (in this case 4).
+  We can prove that it is 4 by finding the ordered_pairs:
+    A = [22, 11, 99, 88, 9, 7]
+    ordered_pairs = (22, 99), (22, 88), (11, 99), (11, 88)
+  As there are in fact 4 ordered pairs, this assertion is accurate.
+
+Question 3. What does every parameter (A, p, q, r) in the merge function
+            represent?
+
+  A is the array itself which is used as reference.
+  p is the first index of the first subarray.
+  q is the is the last index of the first subarray which leaves q+1 to be the
+    first index of the second subarray.
+  r is the last index of the second subarray.
+
+Question 4. What is the assumption made in the merge function about subarrays
+            A[p...q] and A[q+1...r]?
+
+  The merge function assumes that these two subarrays are already sorted.

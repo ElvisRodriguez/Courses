@@ -1,0 +1,85 @@
+Exercises:
+
+1. SUM2(A1, A2, 6) = (5, 1), (10, -4)
+
+2. SUM2(A1, A2, 0) = (7, -7)
+
+3. SUM2(A1, A2, 7) = None
+
+4. SUM2(A1, A2, 14) = (2, 12), (7, 7), (-8, 22), (-20, 34), (13, 1), (0, 14),
+                      (-36, 50), (-44, 58)
+
+Questions (part 1):
+
+1. For each value in A1, I subtracted that value from x and checked if the
+   difference existed in A2.
+
+2. A2 being sorted allowed me to check if there was an existing value in it
+   more efficiently using binary search. The other 3 problems had A2 unsorted
+   and thus required a linear search through them to check for a value.
+
+Questions (part 2):
+
+3. Lines 2 and 3 would both translate into loops (a nested set of loops to be
+   precise). This is because there is a check in A2 for each value in A1 that
+   was subtracted from x and checking if a value exists in an array is itself
+   a loop through each value in A2.
+
+4. We need to further define what data structure is represented by the variable
+   SUM2; depending on what data structure it is, the insertion of the pairs
+   found by the nested loops could take constant time or linear time.
+
+5. Linear search is a search that involves checking each value in a container in
+   the order that the container is presented.
+
+6. Binary search involves checking for a value in a container in a more
+   efficient (logarithmic) way. As the value is first checked against the
+   midpoint of the container, then the part of the container that's checked is
+   cut in half, then the value is checked against the midpoint of that half and
+   so on until a match is found or not found. The halves that are checked depend
+   on whether the value is larger than the midpoint (in which case the right
+   side of the container is checked) or smaller (in which case the left side of
+   the container is checked).
+
+7. Binary search requires an array to be sorted in order to work properly.
+
+8. A hash based search is looking up a value on a table that has already taken
+   some container and mapped it's location to a table using a hashing function.
+   The hashing function creates a key for each element in the container that
+   determines where in the hash data structure that element will reside. When a
+   value is checked for existence in a hash data structure, the value itself
+   will be go through a hashing function and if there's an element that matches
+   that value, the value's hashed result will match the location of the element,
+   thus returning a match. A hash based search is usually done in constant time
+   as all it requires is hashing the value to be found into a key and checking
+   if that key already exists.
+
+Task 1: Write an algorithm (in pseudocode) for each of the following:
+
+  LINEAR_SEARCH(A, v):
+    for i = 0 to A.length:
+      if A[i] equals v:
+        return true
+    return false //if no A[i] equals v after loop
+
+  BINARY_SEARCH(A, v):
+    let middle equal A.length / 2
+    if v equals A[middle]:
+      return True
+    else if v not equals A[middle] and A.length equals 1:
+      return False //we have not found our value and can not further half A
+    if v < A[middle]:
+      let left_half equal A[0] to A[middle]
+      return BINARY_SEARCH(left_half, v)
+    if v > A[middle]:
+      let right_half equal A[middle] to A.length
+      return BINARY_SEARCH(right_half, v)
+
+  HASH_SEARCH(A, v):
+    let table equal create_table(A) //create_table will hash each element of A
+                                    //to a key
+    let result equal table[v]
+    if result is empty:
+      return false // the hash of v did not match the hash of any element in A
+                   // therefore no element of A
+    else return true //the hash of v matches an existing key, thus v is in A

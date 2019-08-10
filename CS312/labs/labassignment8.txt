@@ -1,0 +1,41 @@
+Tracing Insertion Sort
+
+Show the tracing for the insertion-sort algorithm for the following array:
+
+A = [9, 21, 34, 8, 4, 25]
+
+k = key
+* = "shaded"
+-> = movement to the right
+<----- = key movement
+
+Step 1:
+
+ *   k
+[9][21][34][8][4][25]
+
+Step 2:
+
+     *   k
+[9][21][34][8][4][25]
+
+Step 3:
+
+ *   *   *  k
+[9][21][34][8][4][25]
+  ->  ->  ->
+<------------
+
+Step 4:
+
+ *  *   *   *  k
+[8][9][21][34][4][25]
+  -> ->  ->  ->
+<---------------
+
+Step 5:
+
+           *   *   k
+[4][8][9][21][34][25]
+            ->  ->
+               <----

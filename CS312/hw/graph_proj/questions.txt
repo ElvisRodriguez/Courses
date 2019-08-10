@@ -1,0 +1,61 @@
+Part 1: Creating and displaying a simple graph.
+
+  Question 1:
+  What representation is being used for the graph in the code provided,
+  Adjacency Matrix or Adjacency List?
+
+    Adjacency List.
+
+  Question 2:
+  Why is it that we don't need a variable to keep track of the number of
+  vertices? How can we quickly know the number of vertices in the graph?
+
+    The number of vertices is directly reflected by the size of the private
+    data member edges, which represents the graph as a vector of sets. Every
+    set represents a vertex, meaning calling for the size() member of edges
+    quickly gives us the number of vertices.
+
+  Question 3:
+  What is the Big-O time for displaying the graph?
+
+    O(v * e) where v is the number of vertices (sets in the vector) and e is
+    the size of each vertex (the set). It is O(v * e) because we traverse each
+    set in the vector and for each set, we traverse its contents.
+
+  Question 4:
+  What would be the Big-O time for displaying the graph if a matrix
+  representation ahd been used.
+
+    O(v^2) where v is the number of vertices as non-existent edges have to be
+    traversed as well.
+
+Part 2: A Labeled Graph.
+
+  Question 5:
+  What new variables were added to LabeledGraph that were not in Graph? What do
+  you think they are used for?
+
+    Labels and indexedLabels. Labels hold the name of a given vertex (e.g.
+    "Sury" or "Chung") and indexedLabels maps each of those names to a numeric
+    index.
+
+  Question 6:
+  What changes do you see in the add_vertex and add_edge functions? Explain why
+  you think those changes were made?
+
+    In add_vertex, in addition to creating a set representing the vertex
+    and it's eventual edges, there's a map, indexedLabels that adds the name
+    (label) of that vertex along with its current index (represented by the
+    size of the vertices vector - 1).
+    These changes were made so that an adjacency list representation can still
+    be implemented while also allowing vertices with labels (strings) that can
+    be more than just integers.
+
+    In add_edge, both member functions behave the same except instead of
+    asserting that both the source and target parameters are already in the
+    graph (thus prematurely exiting any client program if the assertion fails),
+    LabeledGraph::add_edge will call add_vertex on target and/or source if they
+    are not in the graph.
+    These changes were made to allow more dynamic insertion of vertices as well
+    as allowing users to insert edges without have to check if those vertices
+    exist beforehand.

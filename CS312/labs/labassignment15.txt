@@ -1,0 +1,36 @@
+1. How many subsequences does the following string have?
+   X = ABDA
+
+   length of X is 4, X has 2^4 subsequences.
+
+2. List all the subsequences of X (the sequence given in question 1).
+
+   (NOTE: Second instance of A is expressed as A', null represents an empty
+          subsequence)
+
+   {A, AB, ABD, ABDA', ABA', AD, ADA', AA', B, BD, BDA', BA', D, DA', A', null}
+
+3. Find the longest common subsequence:
+   S1 = 10010101, S2 = 010110110
+
+   010101, 101010, 101101
+
+4. Give an algorithm to find the longest common subsequence between two strings.
+   What is the runtime of your solution?
+
+   Algorithm:
+
+    function longest_subseq(seq_a, seq_b) {
+      let longest = empty string
+      let all_sub_a = set(generate_all_subseq(seq_a))
+      let all_sub_b = set(generate_all_subseq(seq_b))
+      if length(seq_a) < length(seq_b):
+        let n = length(seq_a)
+      else:
+        let n = length(seq_b)
+      for i = n - 1 to 0:
+        for j = n - 1 to 0:
+          if all_sub_a[i] equals all_sub_b[j]:
+            longest = all_sub_a[i]
+            return longest
+    }

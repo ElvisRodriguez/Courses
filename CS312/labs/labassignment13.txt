@@ -1,0 +1,52 @@
+Adjacency List assumed to be a vector of sets
+Adjacency Matrix assumed to be a two dimensional array
+
+Exercises:
+  1. Given an Adjacency-list representation of a directed graph:
+    a. The out degree of vertex v would be computed by finding it's location
+       in the vector and calling whichever length operation is provided by the
+       set (or whichever container).
+       Runtime: O(1) (assuming direct access to v in the vector).
+
+    b. The out degree of all vertices would be computed by iterating through
+       the list and for every iteration, calling the length operation for each
+       vertex's set.
+       Runtime: O(V).
+
+    c. The in degree for every vertex would be computed by iterating through
+       every vertex in the list and searching for the vertex in each set.
+       Runtime: O( V (V log V) ).
+
+    d. The in degree of a vertex v would be computed by iterating through all
+       vertices and seraching for v in each set.
+       Runtime: O(V log V).
+
+  2. Repeat 1 for an Adjacency matrix?
+    a. Find the vertex v's row and iterate through that row's columns, keeping a
+       count of every 1 found in that row.
+       Runtime: O(V).
+
+    b. For every row (vertex) iterate through the columns (vertices) and keep
+       a count for each row (vertex).
+       Runtime: O(V^2).
+
+    c. For every column (vertex), iterate through every row and count the number
+       of 1's that appear at Matrix[row][column].
+       Runtime: O(V^2).
+
+    d. Iterate through each row and count the number of 1's that appear at
+       Matrix[row][v] (where v is the column (vertex)).
+       Runtime: O(V).
+
+  3. To determine if two vertices in an undirected graph are directly connected
+     using an Adjacency-list representation, we can search for vertex v1 at
+     position v2 or vice versa.
+     Runtime: O(log V)
+
+  4. For an Adjacency Matrix if Matrix[v1][v2] = 1, they're connected.
+     Runtime: O(1)
+
+  5 & 6. Instead of building a tree of all reachable nodes from a source vertex,
+     we would build that tree until the target vertex is reached, a path
+     can then be created from source to target by 'climbing up' the parent tree
+     and reversing that path. (This change applies to both BFS and DFS).

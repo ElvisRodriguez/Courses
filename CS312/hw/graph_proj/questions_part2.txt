@@ -1,0 +1,75 @@
+Homework 13 Questions:
+  Questions derived from first article:
+    1. The object of the game is to find the shortest path between an actor and
+       Kevin Bacon where an intermediary connection can only be made between
+       two actors who have appeared in the same movie.
+
+    2. 1,605,485 actors as of April 28th, 2013.
+
+    3. 0.02049225% of actors have a Bacon number of 7 or higher (or 329 out of
+       1,605,485 actors).
+
+    4. An average Bacon number of 2.994 means that - on average - every actor in
+       the IMDB as of April 28th, 2013 is about 3 movies separated from Kevin
+       Bacon.
+
+    5. The Kevin Bacon game corresponds to the shortest path problem in graph
+       theory.
+
+    6. Dijkstra's algorithm works better for edges that have varying 'weights'
+       (usually representing a numeric distance between two vertices). In the
+       case of finding the shortest path between two actors, which movies the
+       actors have been in and who the cast of a movie were are the only concern
+       when creating the path. Using Dijkstra's algorithm for the Kevin Bacon
+       game would be inefficient because every edge in the actor/movie graph
+       has the same weight, causing more comparisons than Breadth-First search.
+
+    7. Dijkstra's algorithm really shines when the weight of a graph's edges are
+       a contributing factor in computing the shortest path between two
+       vertices.
+
+    8.  A graph containing cities and the roads leading to/from them would have
+        weighted edges; with the weight in this case representing the distance
+        between two connected cities. Applications such as Google Maps or a
+        car's GPS implement some version of Dijkstra's algorithm when computing
+        the most efficient route.
+
+    9. A list of 1000 actors where the average degree of separation between them
+       and all other actors is as small as possible.
+
+    10. 3 screenshots uploaded; the actress that had no path to Kevin Bacon was
+        Dorothy Gibson, a titanic survivor whose last credit was in a silent
+        film by the name "Saved by the titanic" where she relived the tragedy in
+        the same clothing she was in the night of the sinking.
+
+  Questions derived from second article:
+    1. Degrees of separation are the number of vertices/edges separating two
+       vertices.
+
+    2. 1.59 billion users were on Facebook at the time of this article.
+
+    3. 3.46 degrees.
+
+    4. A) 50 * 50 = 2,500 friends-of-friends of a person.
+       B) 50 * 50 * 50 = 125,000 friends-of-friends-of-friends of a person.
+
+    5. Using Breath-First search would require a monumental amount of memory
+       and processing time as for every Facebook user, their path of friends
+       has to be calculated while also requiring additional memory in order to
+       filter duplicate friends; such an operation would also have to be done
+       roughly 1.6 billion times.
+
+    6. They use a statistical algorithm called the Flajolet-Martin algorithm,
+       which approximates the number of unique people using a numeric hash
+       while counting the trailing zeroes in the binary representation of that
+       hash. This algorithm trades the accuracy of, let's say, a Breadth-First
+       search with efficiency both in memory and time; but that does still mean
+       the results are an estimation and not exact.
+
+    7. Apache Giraph, an iterative graph processing system that's designed to be
+       highly scalable. It can process huge graph representations of data (like
+       Facebook users) as well as provide data analytics tools for computing
+       statistical data.
+
+    8. It refers to the analysis of a graph to retrieve relational data (like
+       Facebook friends or movies/actors) on a scale of billions of data points.

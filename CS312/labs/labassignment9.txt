@@ -1,0 +1,97 @@
+Tracing Merge Sort
+
+Show the tracing of the MERGE Algorithm for the following input arrays:
+
+L= [2, 4, 8, 14]  R= [6, 10, 12, 16]
+
+* = "shaded values"
+
+Step 1:
+
+  Array A = [...2, 4, 8, 14, 6, 10, 12, 16,...]
+                k
+
+  Array L = [2, 4, 8, 14, ∞]
+             i
+
+  Array R = [6, 10, 12, 16, ∞]
+             j
+
+Step 2:
+
+  Array A = [...2, 4, 8, 14, 6, 10, 12, 16,...]
+                   k
+
+  Array L = [2, 4, 8, 14, ∞]
+             *  i
+
+  Array R = [6, 10, 12, 16, ∞]
+             j
+
+Step 3:
+
+  Array A = [...2, 4, 6, 14, 6, 10, 12, 16,...]
+                      k
+
+  Array L = [2, 4, 8, 14, ∞]
+             *  *  i
+
+  Array R = [6, 10, 12, 16, ∞]
+             j
+
+Step 4:
+
+  Array A = [...2, 4, 6, 8, 6, 10, 12, 16,...]
+                         k
+
+  Array L = [2, 4, 8, 14, ∞]
+             *  *  *   i
+
+  Array R = [6, 10, 12, 16, ∞]
+             *   j
+
+Step 5:
+
+  Array A = [...2, 4, 6, 8, 10, 10, 12, 16,...]
+                             k
+
+  Array L = [2, 4, 8, 14, ∞]
+             *  *  *   i
+
+  Array R = [6, 10, 12, 16, ∞]
+             *   *   j
+
+Step 6:
+
+  Array A = [...2, 4, 6, 8, 10, 12, 12, 16,...]
+                                 k
+
+  Array L = [2, 4, 8, 14, ∞]
+             *  *  *   i
+
+  Array R = [6, 10, 12, 16, ∞]
+             *   *   *   j
+
+Step 7:
+
+  Array A = [...2, 4, 6, 8, 10, 12, 14, 16,...]
+                                     k
+
+  Array L = [2, 4, 8, 14, ∞]
+             *  *  *   *  i
+
+  Array R = [6, 10, 12, 16, ∞]
+             *   *   *   j
+
+Step 8:
+
+  Array A = [...2, 4, 6, 8, 10, 12, 14, 16,...]
+                                         k
+
+  Array L = [2, 4, 8, 14, ∞]
+             *  *  *   *  i
+
+  Array R = [6, 10, 12, 16, ∞]
+             *   *   *   *  j
+
+Array A is now sorted for this interval

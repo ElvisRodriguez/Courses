@@ -1,0 +1,77 @@
+Part 1A:
+
+  Adjacency List:
+
+    Adrian -> Natural -> Michael ->
+    Eva -> Natural ->
+    Ian -> Gregory -> Michael ->
+    Gregory -> Natural -> Ian ->
+    Luis -> Natural ->
+    Malcolm -> Michael ->
+    Michael -> Ian -> Adrian -> Malcolm ->
+    Natural -> Adrian -> Luis -> Eva -> Gregory ->
+
+  Adjacency Matrix:
+
+           |Adrian|Eva|Ian|Gregory|Luis|Malcolm|Michael|Natural|
+    Adrian |   0  | 0 | 0 |   0   | 0  |   0   |   1   |   1   |
+    Eva    |   0  | 0 | 0 |   0   | 0  |   0   |   0   |   1   |
+    Ian    |   0  | 0 | 0 |   1   | 0  |   0   |   1   |   0   |
+    Gregory|   0  | 0 | 1 |   0   | 0  |   0   |   0   |   1   |
+    Luis   |   0  | 0 | 0 |   0   | 0  |   0   |   0   |   1   |
+    Malcolm|   0  | 0 | 0 |   0   | 0  |   0   |   1   |   0   |
+    Michael|   1  | 0 | 1 |   0   | 0  |   1   |   0   |   0   |
+    Natural|   1  | 1 | 0 |   1   | 1  |   0   |   0   |   0   |
+
+Part 1B:
+
+  Adjacency List:
+
+    Bilikis -> Nicholas ->
+    Elvis -> Madeline -> Roberson -> Yousif ->
+    Jonathan -> Bilikis -> Nicholas -> Elvis -> Madeline ->
+    Madeline -> Jonathan -> Elvis ->
+    Nicholas -> Jonathan -> Bilikis ->
+    Roberson -> Madeline ->
+    Yousif -> Elvis ->
+
+  Adjacency Matrix:
+
+            |Bilikis|Elvis|Jonathan|Madeline|Nicholas|Roberson|Yousif|
+    Bilikis |   0   |  0  |    0   |    0   |   1    |    0   |   0  |
+    Elvis   |   0   |  0  |    0   |    1   |   0    |    1   |   1  |
+    Jonathan|   1   |  1  |    0   |    1   |   1    |    0   |   0  |
+    Madeline|   0   |  1  |    1   |    0   |   0    |    0   |   0  |
+    Nicholas|   1   |  0  |    1   |    0   |   0    |    0   |   0  |
+    Roberson|   0   |  0  |    0   |    1   |   0    |    0   |   0  |
+    Yousif  |   0   |  1  |    0   |    0   |   0    |    0   |   0  |
+
+  Questions:
+    A. In-degree of node Elvis is 3.
+    B. In-degree of node Nicholas is 2.
+    C. Out-degree of node Nicholas is 2.
+    D. Out-degree of node Madeline is 2.
+
+Part 2A:
+
+  BFS Tree:
+                              Sury
+                                |
+                              Chung
+                             /     \
+                          Laura    Ray
+                            |
+                          Diane
+
+Part 2B:
+
+  DFS Tree:
+                                Max
+                                 |
+                                Ben
+                                 |
+                                Jen
+                               /   \
+                              Amy  Tim
+                               |
+                              Pam 

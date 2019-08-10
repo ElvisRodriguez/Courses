@@ -1,0 +1,35 @@
+1.1-3
+
+  A static array's strengths are that it has O(1) access, access is allowed to
+  be random, and items in the array are modifiable. However, its size must be
+  determined before run time and cannot be changed during the execution of a
+  program, and arrays do not sort the items inserted thus searching an array
+  will always be O(n) time (unless it is sorted by external means).
+
+1.1-4
+
+  The shortest-path and traveling-salesman problems are similar in that both
+  of their solutions require looking at every possible output and their ideal
+  solution is the shortest distance between n points. They differ in that the
+  shortest-path problem has a solution that results in the best output while
+  the traveling-salesman problem is classified as NP-Complete, meaning that
+  there's no known 'best' solution, only 'good enough' solutions.
+
+1.1-5
+
+  A real-world problem in which only the best solution would do would be
+  programming the precision of a machine designed to perform surgery; its
+  accuracy must be 100% as being even a few centimeters off could result in
+  major complications. A real-world problem in which an approximate solution
+  would do would be setting up solar panels in a given area so that they receive
+  as much sunlight as possible. A solution that was a little off would do if
+  finding the best possible positions would take too many computations.
+
+1.2-2
+
+  Insertion sort beats merge sort for all values of n between 2 and 43 inclusive.
+
+1.2-3
+
+  15 is the smallest value of n that an algorithm with the running time 100*(n^2)
+  runs faster than an algorithm whose running time is 2^n (on the same machine).

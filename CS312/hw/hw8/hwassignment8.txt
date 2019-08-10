@@ -1,0 +1,21 @@
+SUM2 Algorithm(A1, A2, x):                                 Cost      Times
+  sum2 = {} // result                                       c1        1
+  hash_set // initialize                                    c2        1
+  hash_set.insert(all values from A2)                       c3        n2
+  for value in A1:                                          c4        n1
+    difference = x - value                                  c5        n1
+    if difference in hash_set:                              c6        n1
+      sum2.insert(value, diff) //insert pair into result    c7    E(0 to n1) tj
+  return sum2
+
+Letting n1 equal size(A1) and n2 equal size(A2):
+
+T(n) = c1(1) + c2(1) + c3(n2) + c4(n1) + c5(n1) + c6(n1) + c7(E(0 to n1)tj)
+
+Best Case = (c1 + c2)(1) + c3(n2) + (c4 + c5 + c6)(n1) + c7(0)
+          = 3n1 + n2 + 2 + 0
+          = Θ(n1 + n2) // theta notation
+
+Worst Case = (c1 + c2)(1) + c3(n2) + (c4 + c5 + c6)(n1) + c7(n1)
+           = 4n1 + n2 + 2 + 0
+           = Θ(n1 + n2) // theta notation

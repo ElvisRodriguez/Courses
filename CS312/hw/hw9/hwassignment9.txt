@@ -1,0 +1,159 @@
+Pre-Test Questions
+
+1. Given this list [1,14,17,12,27,30,6,83,43,116,67,79,85,2,150]:
+
+  a. Which numbers would be examined by a serial search when searching for 67?
+     (Using the list as is)
+
+     1,14,17,12,27,30,6,83,43,116,67
+
+  b. Which numbers would be examined by a serial search when searching for 50?
+     (Using the list as is)
+
+     1,14,17,12,27,30,6,83,43,116,67,79,85,2,150
+
+  c. Which numbers would be examined by a binary search when searching for 147?
+     (Sorting the list first)
+
+     30, 83, 116, 150
+
+  d. Which numbers would be examined by a binary search when searching for 50?
+     (Sorting the list first)
+
+     30, 83, 67, 43
+
+2. Build a binary search tree with the following strings inserted in order from
+   left to right: [Cherry,Orange,Banana,Apple,Coconut,Peach,Raspberry,Blueberry]
+
+                                  Cherry
+                                 /      \
+                           Banana        Orange
+                          /      \       /      \
+                     Apple   Blueberry Coconut   Peach
+                                                     \
+                                                      Raspberry
+
+3. How are the elements in each of the following STL template classes stored?
+   Indicate whether the class allows duplicate values to be inserted, whether
+   the items are automatically sorted, and the big-O time that it would take to
+   search for a random value in the container.
+
+   a. set<item>
+    Underlying storage: Binary Search Tree.
+    Does it allow repetitions?: No
+    Does it automatically sort the items?: Yes
+    Big-O search: O(log n)
+
+  b. multiset<item>
+    Underlying storage: Binary Search Tree.
+    Does it allow repetitions? Yes
+    Does it automatically sort the items? Yes
+    Big-O search: O(log n)
+
+  c. vector<item>
+    Underlying storage: Dynamic Array.
+    Does it allow repetitions? Yes
+    Does it automatically sort the items? No
+    Big-O search: O(n)
+
+  d. list<item>
+    Underlying storage: Doubly Linked List.
+    Does it allow repetitions? Yes
+    Does it automatically sort the items? No
+    Big-O search: O(n)
+
+  e. stack<item>
+    Underlying storage: Default is deque, but container class is specified upon
+                        creation (can also be a vector or list).
+    Does it allow repetitions? Yes
+    Does it automatically sort the items? No
+    Big-O search: O(n)
+
+  f. queue<item>
+    Underlying storage: Default is deque, but container class is specified upon
+                        creation (can also be a list).
+    Does it allow repetitions? Yes
+    Does it automatically sort the items? No
+    Big-O search: O(n)
+
+  g. map<key,item>
+    Underlying storage: Binary Search Tree
+    Does it allow repetitions? Keys must be unique, but two keys can have the
+                               same items.
+    Does it automatically sort the items? Not items, but keys are automatically
+                                          sorted.
+    Big-O search: O(log n)
+
+  h. multimap<key, item>
+    Underlying storage: Binary Search Tree
+    Does it allow repetitions? Yes
+    Does it automatically sort the items? Not items, but keys are automatically
+                                          sorted.
+    Big-O search: O(log n)
+
+  i. hash_map<key,item>
+    Underlying storage: Binary Search Tree/Dynamic Array? (Documentation
+                        mentions buckets, but not what kind of container class
+                        those buckets are).
+    Does it allow repetitions? Keys must be unique, but two keys can have the
+                               same items.
+    Does it automatically sort the items? No
+    Big-O search: O(n)
+
+  j. hash_multimap<key,item>
+    Underlying storage: Binary Search Tree/Dynamic Array? (Documentation
+                        mentions buckets, but not what kind of container class
+                        those buckets are).
+    Does it allow repetitions? Yes
+    Does it automatically sort the items? No
+    Big-O search: O(n)
+
+4. What is the output of the program?
+
+   THE NAMES ARE:
+  Elvis
+  Elvis
+  Jonathan
+  Nicholas
+
+5. What is the output of the program?
+
+  44
+  43
+  42
+  41
+  40
+
+6. What is the output of the program?
+
+  ACTORS AND THEIR MOVIES:
+  Chris Evans - The Avengers
+  Chris Evans - The Avengers: Age of Ultron
+  Hugh Jackman - X-Men
+  Hugh Jackman - The Wolverine
+  Scarlett Johansson - The Avengers
+  Scarlett Johansson - The Avengers: Age of Ultron
+
+7. What is the output of the program?
+
+   AREA CODES:
+  Denver - 303
+  Denver - 720
+  NYC - 201
+  Weehawken - 347
+
+8. What is the output of the program?
+
+  ACTORS AND THEIR MOVIES:
+  Chris Evans - The Avengers: Age of Ultron
+  Hugh Jackman - X-Men
+  Mark Ruffalo - The Avengers
+  Scarlett Johansson - The Avengers
+
+9. What is the output of the program?
+
+  There are 4 books in your wishlist.The first book on the list is:To Kill a Mockingbird
+  I will remove it
+   The first book on the list now is:The Great Gatsby
+
+10. See 'validation.cpp' for the answer to number 10.

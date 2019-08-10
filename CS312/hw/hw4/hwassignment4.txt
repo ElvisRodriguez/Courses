@@ -1,0 +1,32 @@
+Question 1:
+  The tests in the first block of comments are verifying that I have correctly
+  implemented the isSorted() method.
+
+Question 2:
+  The implementation of merge in the starter code forgoes the use of
+  sentinels (i.e the ∞ that the pseudocode uses to determine when it has
+  reached the end of the sub arrays it created). These sentinels allow the
+  pseudocode to add all the elements from both subarrays to their proper
+  positions in array A without having to implement two more for loops to catch
+  the remaining element left over in either the left or right subarrays.
+
+Question 3:
+  The purpose of putting sentinels at the end of the arrays L and R is to
+  verify that the end of the array has been reached.
+
+Question 4:
+  Lines 8-9 of the Merge pseudocode aren't implemented because the merge
+  function in the starter code chooses to use two additional loops in order to
+  check for any remaining elements in the Left and Right arrays.
+
+Question 5:
+  A while loop is used in the starter code over a for loop because the
+  pseudocode already has a way to check if it has reached the end of the L
+  and R arrays via sentinels and only needs to increment k, while the starter
+  code needs to check if it's in the range of the left and right arrays as well.
+
+Question 6:
+  There are two extra while loops in the merge function because the function
+  is checking for any left over items in the left and right arrays, while the
+  pseudocode already knows it has reached the end of the L and R arrays due to
+  implementing sentinels.
