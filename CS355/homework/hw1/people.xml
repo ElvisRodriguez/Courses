@@ -1,0 +1,38 @@
+<?xml version="1.0"?/>
+<people>
+  <person id="000">
+    <name> Elvis Rodriguez </name>
+    <age> 25 </age>
+    <relationship> Myself </relationship>
+    <occupation> Computer Science Major &amp; Freelance Developer </occupation>
+    <hobby> Programming, games, writing </hobby>
+  </person>
+  <person id="001">
+    <name> Madeline Joseph </name>
+    <age> 25 </age>
+    <relationship> Wife </relationship>
+    <occupation> Nursing Student </occupation>
+    <hobby> Learning Japanese </hobby>
+  </person>
+  <person id="002">
+    <name> Danny Bui </name>
+    <age> 25 </age>
+    <relationship> Friend </relationship>
+    <occupation> Junior Software Developer </occupation>
+    <hobby> Twitch Game Streaming </hobby>
+  </person>
+  <person id="003">
+    <name> William Lam </name>
+    <age> 25 </age>
+    <relationship> Friend </relationship>
+    <occupation> Economics Major </occupation>
+    <hobby> Card &amp; Video Games </hobby>
+  </person>
+  <person id="004">
+    <name> Daquan Gabbidon </name>
+    <age> 25 </age>
+    <relationship> Friend </relationship>
+    <occupation> Teaching Adjunct </occupation>
+    <hobby> Card Games </hobby>
+  </person>
+</people>

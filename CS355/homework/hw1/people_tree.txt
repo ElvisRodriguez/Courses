@@ -1,0 +1,7 @@
+                            People
+                              |
+                     Person (Attribute: id)
+                              |
+  --------------------------------------------------------------------
+  |             |             |                |                     |
+Name          Age        Relationship       Occupation             Hobby
