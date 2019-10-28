@@ -1,0 +1,94 @@
+
+Declaration Type|    Scope            | Hoisted value | Redeclared? | Updated? |
+----------------|---------------------|---------------|-------------|----------|
+var             | Global,             |   Undefined   |    Yes      |   Yes    |
+                | Function/locally    |               |             |          |
+----------------|---------------------|---------------|-------------|----------|
+const           | Block               | Uninitialized |     No      |    No    |
+----------------|---------------------|---------------|-------------|----------|
+let             | Block               | Uninitialized |     No      |   Yes    |
+----------------|---------------------|---------------|-------------|----------|
+
+What is the output of the following program?
+```
+function test() {
+  console.log(a);
+  console.log(b);
+}
+test();
+var a=1, b=2;
+```
+- The output is:
+  undefined
+  undefined
+
+Why is that? Explain whether scope, hoisting,	redeclaring	and	updating have
+anything to do with it and how.
+- Values a and b that are being printed to the console by test() are hoisted
+  from the variables a and b declared below using var. Hoisted variables using
+  the var declaration are initialized to a value of undefined.
+
+What is the output of the following program?
+```
+function test() {
+  console.log(a);
+  console.log(b);
+}
+test();
+const a=1, b=2;
+```
+- There is no output, the program will crash.
+
+Why is that? Explain whether scope, hoisting,	redeclaring	and	updating have
+anything to do with it and how.
+- Variables declared using const are block-scoped, meaning that in the program,
+  a and b are only defined outside of the test block. The variables a and b in
+  the test block are uninitialized, thus crashing the program.
+
+What is the output of the following program?
+```
+function test() {
+  console.log(a);
+  console.log(b);
+}
+test();
+let a=1, b=2;
+```
+- There is no output, the program will crash.
+
+Why is that? Explain whether scope, hoisting,	redeclaring	and	updating have
+anything to do with it and how.
+- Variables declared using let are block-scoped, meaning that in the program,
+  a and b are only defined outside of the test block. The variables a and b in
+  the test block are uninitialized, thus crashing the program.
+
+What is the output of the following program?
+```
+const a=1, b=2;
+function test() {
+  if (true) {
+    var a = 100;
+    let b = 300;
+    const c = 300;
+  }
+  console.log(a);
+  console.log(b);
+  //console.log(c);
+}
+test();
+```
+- The output is:
+  100
+  2
+
+What is the output of the program after you uncomment the line "console.log(c)?"
+- There is no output, the program will crash.
+
+Why is that? Explain whether scope, hoisting,	redeclaring	and	updating have
+anything to do with it and how.
+- The variable c is only available and defined the scope of the if statement in
+  the test function. Outside of that if block, the variable c is uninitialized,
+  therefore crashing the program with a reference error. The other console.logs
+  work because a was declared using var and is therefore available in the entire
+  function block, and console.log(b) is referencing the b declared using const
+  before the function definition.

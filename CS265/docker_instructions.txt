@@ -1,0 +1,9 @@
+See assignment in Google Classroom
+1. Create app directory
+2. create App.js, Dockerfile, package.js in app directory
+3. Build custom image:
+   docker build -t docker-node
+4. Run container based on your custom image:
+   docker run -it -p 80808:3000 docker-node
+5. test with curl command:
+   curl localhost:8080
