@@ -1,0 +1,60 @@
+1.
+chocolate chip cookie
+banana chocolate milkshake
+chip
+chocolate
+
+2.
+movies_from_2016 = [movie for movie in movies if movie[0:4] == '2016']
+for movie in movies_from_2016:
+  print(movie, movies[movie])
+
+3.
+[0, 4, 16, 36, 64, 100]
+
+4a.
+[0, 10]
+
+4b.
+foo = [x for x in range(20) if x % 2 == 0 and x % 5 == 0]
+print(foo)
+
+5.
+def power3(limit):
+  power = 0
+  while power < limit:
+    yield 3 ** power
+    power += 1
+
+6a.
+["2018, Black Panter", "2018: Bohemian Rhapsody", "2017: Get Out",
+ "2017: Logan",
+ "REMOVED FROM LIBRARY - 2016: La La Land",
+ "REMOVED FROM LIBRARY - 2016: Doctor Strange"]
+
+6b.
+new_list = ['REMOVED FROM LIBRARY - ' + m if m[0:4] == '2016' else m for m in movies]
+
+7.
+1
+4
+9
+16
+25
+36
+
+8.
+foo = [x * x for x in range(1,1000)]
+print(foo[0:6])
+
+9.
+def getDigits(string):
+  return [char for char in string if char.isDigit()]
+
+10.
+def getDigits(string):
+  index = 0
+  while index < len(string):
+    if string[index].isDigit():
+      yield string[index]
+    index += 1

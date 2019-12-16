@@ -1,0 +1,33 @@
+Python:
+
+mapped_list = list(map(function, iterable))
+
+filtered_list = list(filter(function, iterable))
+
+anonymous_function = lambda first_arg, second_arg, *args: <code>
+
+def generator(possible_condition=True):
+    starting_value = value
+    while possible_condition:
+        yield possibly_transformed(starting_value)
+        mutate(starting_value)
+# Assign function to a variable
+generator_function = generator(possible_condition)
+# Call generator using built in next() function
+next(generator_function)
+
+JavaScript:
+
+function generator(possible_condition=true) {
+    let starting_value = value;
+    if (possible_condition) {
+        return () => {
+            mutate(starting_value);
+            return starting_value;
+        }
+    }
+}
+// Assign generator to a variable
+const generator_pointer = generator(possible_condition);
+// Call generator like any function
+generator_pointer()
