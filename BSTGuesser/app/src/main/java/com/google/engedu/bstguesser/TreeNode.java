@@ -27,7 +27,7 @@ public class TreeNode {
     private static final int SIZE = 60;
     private static final int MARGIN = 20;
     private int value, height;
-    protected TreeNode left, right;
+    protected TreeNode left, right, parent;
     private boolean showValue;
     private int x, y;
     private int color = Color.rgb(150, 150, 250);
@@ -38,29 +38,31 @@ public class TreeNode {
         showValue = false;
         left = null;
         right = null;
+        parent = null;
     }
 
-    private TreeNode insertNewNode(TreeNode root, int value) {
-        Log.i(TAG, "ROOT: " + root);
-        if (root == null) {
-            root = new TreeNode(value);
-            return root;
+    private TreeNode insertNewNode(TreeNode current, TreeNode parent, int value, int height) {
+        if (current == null) {
+            current = new TreeNode(value);
+            current.height = height;
+            current.parent = parent;
+            return current;
         }
-        if (value < root.value) {
-            root.left =  this.insertNewNode(root.left, value);
+        if (value < current.value) {
+            current.left =  this.insertNewNode(current.left, current, value, height + 1);
         }
         else {
-            root.right =  this.insertNewNode(root.right, value);
+            current.right =  this.insertNewNode(current.right, current, value, height + 1);
         }
-        return root;
+        return current;
     }
 
     public void insert(int valueToInsert) {
         if (valueToInsert < this.value) {
-            this.left = insertNewNode(this.left, valueToInsert);
+            this.left = insertNewNode(this.left, this, valueToInsert, this.height + 1);
         }
         else {
-            this.right = insertNewNode(this.right, valueToInsert);
+            this.right = insertNewNode(this.right, this, valueToInsert, this.height + 1);
         }
     }
 
