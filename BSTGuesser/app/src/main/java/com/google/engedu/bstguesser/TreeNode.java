@@ -27,42 +27,95 @@ public class TreeNode {
     private static final int SIZE = 60;
     private static final int MARGIN = 20;
     private int value, height;
-    protected TreeNode left, right, parent;
+    protected TreeNode left, right;
     private boolean showValue;
     private int x, y;
     private int color = Color.rgb(150, 150, 250);
 
     public TreeNode(int value) {
         this.value = value;
-        this.height = 0;
+        this.height = 1;
         showValue = false;
         left = null;
         right = null;
-        parent = null;
     }
 
-    private TreeNode insertNewNode(TreeNode current, TreeNode parent, int value, int height) {
+    private int max(int first, int second) {
+        return (first > second) ? first : second;
+    }
+
+    private int getHeight(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        return node.height;
+    }
+
+    private TreeNode rightRotation(TreeNode node) {
+        TreeNode leftNode = node.left;
+        TreeNode rightLeftNode = leftNode.right;
+        leftNode.right = node;
+        node.left = rightLeftNode;
+        node.height = 1 + this.max(this.getHeight(node.left), this.getHeight(node.right));
+        leftNode.height = 1 + this.max(this.getHeight(leftNode.left), this.getHeight(leftNode.right));
+        return leftNode;
+    }
+
+    private TreeNode leftRotation(TreeNode node) {
+        TreeNode rightNode = node.right;
+        TreeNode leftRightNode = rightNode.left;
+        rightNode.left = node;
+        node.right = leftRightNode;
+        node.height = 1 + this.max(this.getHeight(node.left), this.getHeight(node.right));
+        rightNode.height = 1 + this.max(this.getHeight(rightNode.left), this.getHeight(rightNode.right));
+        return rightNode;
+    }
+
+    private int getBalanceFactor(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        return this.getHeight(node.left) - this.getHeight(node.right);
+    }
+
+    private TreeNode _insert(TreeNode current, int value) {
         if (current == null) {
-            current = new TreeNode(value);
-            current.height = height;
-            current.parent = parent;
-            return current;
+            return new TreeNode(value);
         }
         if (value < current.value) {
-            current.left =  this.insertNewNode(current.left, current, value, height + 1);
+            current.left =  this._insert(current.left, value);
+        }
+        else if (value > current.value) {
+            current.right =  this._insert(current.right, value);
         }
         else {
-            current.right =  this.insertNewNode(current.right, current, value, height + 1);
+            return current;
+        }
+        current.height = 1 + this.max(this.getHeight(current.left), this.getHeight(current.right));
+        int balanceFactor = this.getBalanceFactor(current);
+        if (balanceFactor > 1 && value < current.left.value) {
+            return this.rightRotation(current);
+        }
+        if (balanceFactor < -1 && value > current.right.value) {
+            return this.leftRotation(current);
+        }
+        if (balanceFactor > 1 && value > current.left.value) {
+            current.left = this.leftRotation(current.left);
+            return this.rightRotation(current);
+        }
+        if (balanceFactor < -1 && value < current.right.value) {
+            current.right = this.rightRotation(current.right);
+            return this.leftRotation(current);
         }
         return current;
     }
 
-    public void insert(int valueToInsert) {
-        if (valueToInsert < this.value) {
-            this.left = insertNewNode(this.left, this, valueToInsert, this.height + 1);
+    public void insert(int value) {
+        if (value < this.value) {
+            this.left = _insert(this.left, value);
         }
         else {
-            this.right = insertNewNode(this.right, this, valueToInsert, this.height + 1);
+            this.right = _insert(this.right, value);
         }
     }
 
