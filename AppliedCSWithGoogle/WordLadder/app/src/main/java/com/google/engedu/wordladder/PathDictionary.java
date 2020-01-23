@@ -15,6 +15,7 @@
 
 package com.google.engedu.wordladder;
 
+import android.util.AtomicFile;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -28,9 +29,13 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Queue;
 
+import static android.content.ContentValues.TAG;
+
 public class PathDictionary {
     private static final int MAX_WORD_LENGTH = 4;
     private static HashSet<String> words = new HashSet<>();
+    private static HashSet<Vertex> vertices = new HashSet<>();
+    private static Graph graph;
 
     public PathDictionary(InputStream inputStream) throws IOException {
         if (inputStream == null) {
@@ -47,6 +52,41 @@ public class PathDictionary {
             }
             words.add(word);
         }
+        for (String word: words) {
+            if (word.equals("fire")) {
+                Log.i(TAG, "PathDictionary: " + "firefound");
+            }
+            Vertex vertex = new Vertex(word);
+            vertices.add(vertex);
+        }
+        graph = new Graph(vertices);
+        buildGraph();
+    }
+
+    private void buildGraph() {
+        for (Vertex firstWord: vertices) {
+            for (Vertex secondWord: vertices) {
+                if (areWordsNeighbors(firstWord.getLabel(), secondWord.getLabel())) {
+                    graph.addEdge(firstWord, secondWord);
+                }
+            }
+        }
+    }
+
+    private boolean areWordsNeighbors(String first, String second) {
+        if (first.length() != second.length()) {
+            return false;
+        }
+        int differingCharacters = 0;
+        for (int i = 0; i < first.length(); i++) {
+            if (first.charAt(i) != second.charAt(i)) {
+                differingCharacters += 1;
+                if (differingCharacters > 1) {
+                    return false;
+                }
+            }
+        }
+        return differingCharacters == 1;
     }
 
     public boolean isWord(String word) {
@@ -54,10 +94,49 @@ public class PathDictionary {
     }
 
     private ArrayList<String> neighbours(String word) {
-        return new ArrayList<String>();
+        ArrayList<String> allNeighbors = new ArrayList<>();
+        Vertex vertex = graph.getVertex(word);
+        for (int i = 0; i < vertex.getNeighborCount(); i++) {
+            Edge edge = vertex.getNeighbor(i);
+            String label = edge.getTwo().getLabel();
+            allNeighbors.add(label);
+        }
+        return allNeighbors;
     }
 
     public String[] findPath(String start, String end) {
+        if (!isWord(start) || !isWord(end)) {
+            return null;
+        }
+        ArrayDeque<ArrayList<String>> queue = new ArrayDeque<>();
+        ArrayList<String> startingArray = new ArrayList<>();
+        startingArray.add(start);
+        queue.add(startingArray);
+        while (!queue.isEmpty()) {
+            ArrayList<String> path = queue.removeFirst();
+            int step = 1;
+            for (String p: path) {
+                Log.i(TAG, "" + step + ".  " + p);
+                step += 1;
+            }
+            String word = path.get(path.size() - 1);
+            ArrayList<String> nextNeighbors;
+            nextNeighbors = this.neighbours(word);
+            HashSet<String> visited = new HashSet<>(path);
+            for (String neighbor: nextNeighbors) {
+                if (!visited.contains(neighbor)) {
+                    ArrayList<String> nextPath = new ArrayList<>();
+                    nextPath.addAll(path);
+                    nextPath.add(neighbor);
+                    if (neighbor.equals(end)) {
+                        String[] result = new String[nextPath.size()];
+                        result = nextPath.toArray(result);
+                        return result;
+                    }
+                    queue.add(nextPath);
+                }
+            }
+    }
         return null;
     }
 }

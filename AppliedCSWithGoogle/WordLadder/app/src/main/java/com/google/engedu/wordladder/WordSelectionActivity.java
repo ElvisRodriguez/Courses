@@ -17,7 +17,9 @@ package com.google.engedu.wordladder;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -31,6 +33,7 @@ import com.google.engedu.worldladder.R;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class WordSelectionActivity extends AppCompatActivity {
 
@@ -59,6 +62,11 @@ public class WordSelectionActivity extends AppCompatActivity {
                 startWordView.getText().toString().toLowerCase(),
                 endWordView.getText().toString().toLowerCase());
         if (words != null) {
+            for (String word: words) {
+                Log.i("", "-->" + word + "-->");
+            }
+        }
+        if (false) {
             // TODO: Launch new activity here
         } else {
             Log.i("Word ladder", "Word combination is not possible");
