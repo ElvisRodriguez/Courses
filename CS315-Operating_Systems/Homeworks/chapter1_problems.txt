@@ -1,0 +1,37 @@
+17. Draw a system flowchart illustrating the steps performed by an operating
+    system as it executes the instruction to back up a disk on a single-user
+    computer system. Begin with the user typing the command on the keyboard
+    or choosing an option from a menu, and conclude with the result being
+    displayed on the monitor.
+
+- The Device manager receives the electrical impulse from the user's click of
+  the mouse, decodes the command by calculating the location of the cursor.
+- This information is sent to the user interface, which identifies the command.
+- The command is then sent to the Processor Manager.
+- The Processor Manager send an a message to the user acknowledging the request,
+  in this case something along the lines of "Beginning Backup."
+- Due to the disk being located in secondary storage, the File Manager
+  calculates the exact location of the disk and passes this information to the
+  Device Manager.
+- The Device Manager retrieves the contents of the disk and sends it to the
+  Memory Manager; if necessary, the Memory Manager find space for the file(s)
+  in main memory and records its exact location; keeping track of it's location
+  in memory.
+- When the CPU is ready to run the disk backup program, the program begins
+  execution via the Processor Manager, sending a request to the File Manager to
+  copy all the discs' files and sends all the information to the Device Manager.
+- The device manager finds the location of the storage where the discs' files
+  are being backed up and passes that information back to the file manager.
+- The file manager writes the copied disc data into the storage.
+- The backup program is finished and the Processor Manager reassigns the CPU
+  to the next program waiting in line.
+- The Memory Manager releases the program's space in main memory and gets ready
+  to make it available to the next program that requires memory.
+- Finally, the User interface displays the results to the user's monitor.
+
+20. If a process terminates, will its threads also terminate or will they
+    continue to run? Explain your answer.
+
+- The process' threads will also terminate, because the threads are dependent
+upon the processes it is running; the related threads will also have no work due
+to the related process' termination.

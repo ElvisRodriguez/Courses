@@ -1,0 +1,69 @@
+While both are operating systems, Windows and Linux are vastly different in
+the way they handle their files, users, directories, etc.
+
+File System
+--------------------------------------------------------------------------------
+Windows:
+- Files are stored in folders on different data drives like C:D:E:.
+- All system/program files are stored - normally - in the C: drive.
+
+Linux:
+- Files are ordered in a tree structure starting with the root directory.
+- Root directory considered the start of the file system, further branching out
+  to other subdirectories.
+- System and program files are stored in appropriately named directories; boot
+  files are stored in the boot/ directory, program/software files are stored in
+  the bin/ directory, etc.
+
+Types of Files
+--------------------------------------------------------------------------------
+Linux:
+- Everything is a file; directories are files, files are files, and devices like
+  printers/mouses/keyboards are files.
+- General files or ordinary files are the most commonly used files, they can be
+  in ASCII or binary format.
+- Directory files are warehouses for other file types. Directories can be within
+  other directories as subdirectories. They are equivalent to folders in
+  windows.
+- Device Files are located in the dev/ directory and are represented as files.
+  For example, if a hard drive has 3 partitions it would be represented as three
+  separate and numbered files.
+- All files have permissions (read/write/execute); which permission is available
+  to which user depends on what permissions were given to the user by the system
+  admin.
+
+Windows:
+- Devices (printers/keyboards/hard drives) are represented as drive letters (C:,
+  D:, E:, etc).
+
+File Name Convention:
+--------------------------------------------------------------------------------
+Windows:
+- File names are case insensitive, so folders cannot have two files with the
+  same name but a different case.
+Linux:
+- File names are case sensitive, so two files names "example" and "EXAMPLE" are
+  allowed in the same directory.
+
+Users
+--------------------------------------------------------------------------------
+Linux:
+- Three types of users: regular, administrative (root), service.
+- Regular user accounts are created when the OS is installed with all files
+  residing in the home/ directory.
+- Also created at the time of OS installation, the root user is a superuser who
+  can access restricted files, install software and has administrative
+  privileges. Users must be logged in as a root user in order to perform and of
+  the aforementioned tasks.
+- Service accounts are not seen in the desktop version of Linux, but are used
+  in servers such as Apache or Squid; they add a layer of security by allowing
+  or denying access to various resources depending on the service.
+
+Windows:
+- Four types of users: Administrator, Standard, Child, Guest.
+- Admin accounts can install software and modify certain non-crucial system
+  files.
+- Standard and guest accounts are the regular Windows users, though guest
+  accounts do not offer the same level of customization.
+- Child accounts are Standard accounts that may have certain applications
+  restricted based on parental controls set up by the Administrator.
