@@ -1,0 +1,50 @@
+2. Compare and contrast the modeling process with the software life cycle:
+   analysis, design, implementation, testing, documentation, maintenance.
+    
+    Software is generally implemented to solve a problem or problems. A problem
+    in software development must have itself and its components clearly defined
+    so the rest of the software development life cycle goes smoothly. This
+    requirement to clearly define the problem is exactly like the analyis of a
+    problem in the modeling process.
+
+    Software is designed based on the type of application required for the
+    problem (web, mobile, REST api, etc) and the technologies that would be
+    used for that application. Each technology can be treated as its own
+    component with its various classes and methods being subcomponents.
+    This relationship between these components and subcomponents is similar to
+    the relationship between variables and submodels. However, unlike the
+    formulation of a model, the design step of software needs not to make
+    any assumptions as the problem the software is being design to solve has
+    been clearly definied in all its parts.
+
+    Implementation of software follows the same logical steps as solving a
+    model; for both processes, this step will increase in difficulty if the 
+    design of the software or the formulation of the model has not been
+    simplified enough to properly execute implementation/solving. Unlike
+    in the modeling process, poorly designed software that finds its
+    implementation process difficult will have its design changed based on
+    what is implemented, possible changing the scope of the problem. The
+    modeling process requires going back a step to simplify the formulation
+    of the model.
+
+    Testing in software happens at all points during the software life cycle
+    during and after implementation. However having tests with 100% coverage
+    for all parts of the software becomes more difficult, if not impossible,
+    the larger the software is. Good verification of a data model offers
+    more concrete testing with 100% coverage (assuming a well formulated 
+    model).
+
+    Documentation of software is generally paired with all steps of the
+    software development life cycle. The problem - defined in all of it's
+    parts has been clearly defined and spelt out. Well designed software
+    will have a series of documents spelling out all the components of the
+    software. Even the specific methods or classes of the software are 
+    documented to inform programmers what the class or method is for. A
+    model's report also covers all the components of the modeling process.
+
+    Maintenance is crucial in software as there could be various bugs not
+    found in testing, there could be better technologies that the software
+    might be changed to use, and the software might need to scale to an
+    ever expaning set of clients. Unlike maintaining a model, updates are
+    represented through bug or patch reports, instead of going through
+    the entire software life cycle process again.
