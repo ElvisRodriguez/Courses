@@ -1,0 +1,9 @@
+#folders
+.vscode
+
+#files
+__pycache__
+.db
+.env
+
+*.pem

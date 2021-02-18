@@ -1,0 +1,19 @@
+#! /usr/bin/python3.5
+JANUARY = 1
+FEBRUARY = 2
+MARCH = 3
+APRIL = 4
+MAY = 5
+JUNE = 6
+JULY = 7
+AUGUST = 8
+SEPTEMBER = 9
+OCTOBER = 10
+NOVEMBER = 11
+DECEMBER = 12
+
+MONTHS_WITH_31_DAYS = frozenset([JANUARY, MARCH, MAY, JULY, AUGUST, OCTOBER, DECEMBER])
+MONTHS_WITH_30_DAYS = frozenset([APRIL, JUNE, SEPTEMBER, NOVEMBER])
+
+URL = 'http://api.tvmaze.com/schedule?country=US&date={}'
+OK = 200
