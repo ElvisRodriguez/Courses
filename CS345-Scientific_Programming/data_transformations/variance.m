@@ -1,9 +1,3 @@
-% Load Oceanic data and create arrays from data columns
-load_data;
-
-% Load thickness values
-depth_thickness;
-
 % Load weighted values
 weighted_average;
 
@@ -34,5 +28,5 @@ variance_richardson_number = sum_squared_difference_ri / sum(weight);
 variance_heat_diffusivity = sum_squared_difference_kh / sum(weight);
 
 % Display variances
-disp(variance_richardson_number);
-disp(variance_heat_diffusivity);
+fprintf('Variance of Richardson Number: %d\n', variance_richardson_number);
+fprintf('Variance of Heat Diffusivity: %d\n', variance_heat_diffusivity);
