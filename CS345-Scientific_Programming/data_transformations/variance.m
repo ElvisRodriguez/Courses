@@ -28,5 +28,5 @@ variance_richardson_number = sum_squared_difference_ri / sum(weight);
 variance_heat_diffusivity = sum_squared_difference_kh / sum(weight);
 
 % Display variances
-fprintf('Variance of Richardson Number: %d\n', variance_richardson_number);
-fprintf('Variance of Heat Diffusivity: %d\n', variance_heat_diffusivity);
+% fprintf('Variance of Richardson Number: %d\n', variance_richardson_number);
+% fprintf('Variance of Heat Diffusivity: %d\n', variance_heat_diffusivity);

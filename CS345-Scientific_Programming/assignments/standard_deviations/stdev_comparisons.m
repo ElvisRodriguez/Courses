@@ -7,9 +7,9 @@ kh_builtin_stdev = std(kh(1:31), weight);
 
 % Compare both standard deviations of RI
 fprintf('RI standard deviation (without built in function):\n');
-fprintf('%d\n', ri_stdev);
+fprintf('%.11d\n', ri_stdev);
 fprintf('RI standard deviation (using built in function):\n');
-fprintf('%d\n', ri_builtin_stdev);
+fprintf('%.11d\n', ri_builtin_stdev);
 
 % Compare both standard deviations of KH
 fprintf('KH standard deviation (without built in function):\n');

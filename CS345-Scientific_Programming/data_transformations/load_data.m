@@ -1,5 +1,3 @@
-% Remove any previously loaded variables
-clear;
 
 % Load Data
 data = load('oceanic_data.txt');

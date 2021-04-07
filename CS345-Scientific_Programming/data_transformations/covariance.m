@@ -1,18 +1,10 @@
-% Calculate Covariance of the richardson number and heat diffusivity values
-
 % Load weighted values
 weighted_average;
 
-% Create variable to hold covariance
-covariance_of_kh_ri = 0;
+% Calculate Covariance of the richardson number and heat diffusivity values
+n = max(size(richardson_number)) - 0;
 
-% Calculate covariance which is Σ((xi - xm) * (yi - ym))/(n - 1)
-n = max(size(richardson_number));
-for i = 1:n
-    xi_sub_xm = richardson_number(i) - average_richardson_number;
-    yi_sub_ym = heat_diffusivity(i) - average_heat_diffusivity;
-    covariance_of_kh_ri = covariance_of_kh_ri + (xi_sub_xm * yi_sub_ym);
-end
-covariance_of_kh_ri = covariance_of_kh_ri / (n - 1);
+mean_of_products = sum(richardson_number(1:n).*heat_diffusivity(1:n).*weight(1:n))/sum(weight(1:n));
+covariance_of_kh_ri = mean_of_products - (average_richardson_number*average_heat_diffusivity);
 
-fprintf('Covariance of RI and KH: %d', covariance_of_kh_ri);
+fprintf('Covariance of RI and KH: %d\n', covariance_of_kh_ri);
