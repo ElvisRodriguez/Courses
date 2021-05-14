@@ -1,0 +1,9 @@
+Question: What is a computer with multiple processors called?
+Answer: multicore computer.
+
+Question: Which of the following components of CPU is responsible for executing
+mathematical operations?
+Answer: ALU 
+
+Question: What are the basic functions that a computer can perform?
+Answer: data processing, data storage, data movement, and control

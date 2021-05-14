@@ -1,0 +1,102 @@
+1. Convert each of the following numbers to the requested base:
+    a. 4A.C (base 16) to decimal
+        4 -> 0100
+        A -> 1010
+        C -> 1100
+        01001010.1100 -> 2^5 + 2^3 + 2^1 + 2^(-1) + 2^(-2)
+                      -> 32 + 8 + 2 + 0.5 + 0.25
+                      -> 42 + 0.75
+                      -> 42.75
+        Answer: 42.75
+    b. 32.75 (base 10) to binary
+        Before decimal point:
+        32 % 2 -> 0
+        16 % 2 -> 0
+        8 % 2  -> 0
+        4 % 2  -> 0
+        2 % 2  -> 0
+        1 % 2  -> 1
+        10000
+        After decimal point:
+        .75 * 2 = 1.5 -> 1
+        .5 * 2 = 1    -> 1
+        0
+        11
+        Answer: 10000.11
+    c. 11010.0101 (base 2) to hexadecimal
+        00011010.0101
+        0001 -> 1
+        1010 -> A
+        0101 -> 5
+        Answer: 1A.5
+    d. AF.AE (base 16) to binary
+        A -> 1010
+        F -> 1111
+        A -> 1010
+        E -> 1110
+        Answer: 10101111.10101110
+    e. 101011.10 (base 2) to decimal
+        2^5 + 2^3 + 2^1 + 2^0 + 2^(-1)
+        32 + 8 + 2 + 1 + 0.5
+        43 + 0.5
+        Answer: 43.5
+
+2a. 2[2^(32-2*8)] = 2(2^16) = 131072 bytes.
+2b. The program counter needs at least 48 bits while the instruction register needs 32 bits.
+2c. The processor must access memory 2 times for each instruction cycle.
+2d. The System Bus consists of 2^16 = 65536 lines.
+2e. It must obtain the use of the bus and transfer data via the bus.
+
+3.
+step | PC  | AC  | IR  | MBR  | 007  | 008  | 009  | 00A  | 00B |
+----------------------------------------------------------------|
+  1  | 000 |     |     |      |  4   |  1   |  0   |  2   |  3  |
+  2  |     |     | 01  | 007  |      |      |      |      |     |
+  3  |     |  4  |     |      |      |      |      |      |     |
+  4  |     |     | 0F  | 002  |      |      |      |      |     |
+  5  |     |     | 06  | 008  |      |      |      |      |     |
+  6  |     |  3  |     |      |      |      |      |      |     |
+  7  |     |     | 21  | 007  |      |      |      |      |     |
+  8  |     |     |     |      |  3   |      |      |      |     |
+  9  |     |     | 01  | 009  |      |      |      |      |     |
+ 10  |     |  3  |     |      |      |      |      |      |     |
+ 11  |     |     | 05  | 00A  |      |      |      |      |     |
+ 12  |     |  5  |     |      |      |      |      |      |     |
+ 13  |     |     | 21  | 009  |      |      |      |      |     |
+ 14  |     |     |     |      |      |      |  5   |      |     |
+ 15  |     |     | 01  | 00A  |      |      |      |      |     |
+ 16  |     |  2  |     |      |      |      |      |      |     |
+ 17  |     |     | 05  | 00B  |      |      |      |      |     |
+ 18  |     |  5  |     |      |      |      |      |      |     |
+ 19  |     |     | 21  | 00A  |      |      |      |      |     |
+ 20  |     |     |     |      |      |      |      |   5  |     |
+ 21  |     |     | 0E  | 000  |      |      |      |      |     |
+ 22  |     |     | 00  | 000  |      |      |      |      |     |
+ 23  |     |     |     |      |      |      |      |      |     |
+ 24  |     |     |     |      |      |      |      |      |     |
+ 25  |     |     |     |      |      |      |      |      |     |
+ Program terminates at step 22, values of 007 through 00b are:
+ 007: 3
+ 008: 1
+ 009: 5
+ 00A: 5
+ 00B: 3
+
+ 4.
+ Using this formula: [n^2(n + 1)^2]/4
+ Address  | Contents
+ 000      | 091000B100      //Load n into MQ, Multiply MQ by n
+ 001      | 2104701100      //Put n^2 in 047, Load n into AC
+ 002      | 0504821046      //Add 1 to AC, put n+1 in 046
+ 003      | 090460B046      //Load n+1 into MQ, Multiple MQ by n+1
+ 004      | 2104609046      //Put (n+1)^2 into 046, load (n+1)^2 to MQ
+ 005      | 0B04721050      //Multiply MQ by n^2, put result in 050
+ 006      | 010500C049      //Load 050 into AC, Divide AC by 4
+ 007      | 120500A000      //Put quotient into left address of 050, put MQ into AC
+ 008      | 1305000000      //Put remainder into right address of 050, terminate
+ 009      | 0000000000
+ 046      | 0000000000
+ 047      | 0000000000
+ 048      | 0000000001
+ 049      | 0000000004
+ 050      | 0000000000

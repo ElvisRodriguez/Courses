@@ -1,0 +1,30 @@
+Your program is almost perfect; however, you interpretation of what the identifier represents 
+is incorrect. Do you remember writing track tables. If we wrote the trace table as a list, 
+the identifier would be the variable that is being assigned the new value. Hence, your write methods 
+should be taking two parameters; one of which should the the identifier.  
+
+For instance, in your 'LogTest.cpp' file, you should modify it as follows
+
+int main() {
+    Log logger("test_logs.txt");
+    string ids[] = {"0x00","0x01","0x02","0x03","0x04","0x05","0x06","0x07","0x08","0x09","0x10","0x11"};
+    int idx = 0;
+
+    string testStrings[5] = {
+        "0111001011010", "FF00FABCD", "Bad String", "0", "1"
+    };
+    vector<bool> testBinaryArray_A = {true, false, true, false};
+    vector<bool> testBinaryArray_B = {true, true, true, true};
+    vector<bool> testBinaryArray_C = {false, false, false, false};
+    for (string testString: testStrings) {
+        logger.write(ids[(idx % 12)],testString);
+	idx += 1;
+    }
+    logger.write(ids[idx++ % 12],testBinaryArray_A);
+    logger.write(ids[idx++ % 12],testBinaryArray_B);
+    logger.write(ids[idx++ % 12],testBinaryArray_C);
+    return 0;
+}
+
+The outcome is be similiar to what the original code produced. You do not have to provide any constraints for the
+identifier; it can just be a string (it should be a string). 

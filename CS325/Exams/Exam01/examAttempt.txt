@@ -1,0 +1,60 @@
+1. Name and describe the 4 major structural components of a CPU.
+- The Control Unit, which controls the operations of the CPU and by extension,
+  the computer.
+- Registers, which the CPU uses for internal storage.
+- The ALU (Arithmetic and Logic Unit), which does data processing for the
+  computer.
+- The Internal Bus, which connects the other 3 components and allows them to
+  communicate.
+
+2. Provide a paraphrase of Moore's Law and state 3 consequences of the law.
+Moore's law is the prediction offered by Gordon Moore that the amount of
+transistors that could be placed onto a single chip will continue to
+double roughly evey year; thus the processing power of computers would
+in turn double in the same time frame.
+- Consequence 1: the cost of chips remain constant, dramatically reducing
+    the cost of computers over the years.
+- Consequence 2: Operating speed increases as more components are packed
+    closer together.
+- Consequence 3: The overall size of computers shrank, while still
+    maintaining an increase in power, leading to inventions like the
+    smartphone.
+
+3. Name all the registers of the IAS computer, and then, state the purpose of
+   any 4 of the registers.
+- Memory Buffer Register
+- Memory Address Register
+- Instruction Register
+- Instruction Buffer Register
+- Program Counter
+- Accumulator
+- Muliplier Quotient
+- The program counter holds the memory address of the next instruction pair that
+  is to be fetched from memory.
+- The Instruction Register contains the 8 bit opcode instruction that is
+  currently being executed.
+- The Instruction Buffer Register temporarily holds the right-hand instruction
+  from a word in memory.
+- The Memory Buffer Register contains a word to be stored in memory or sent to
+  the I/O unit or is used to receive a word from memory/the I/O unit.
+
+4. Convert each of the following binary numbers to decimal numbers:
+4a. 1000100.1101
+    2^6 + 2^2 + 2^(-1) + 2^(-2) + 2^(-4)
+    64 + 4 + 0.5 + 0.25 + 0.0625
+    68 + 0.8125 = 68.8125
+4b. 1110.1111
+    2^3 + 2^2 + 2^1 + 2^(-1) + 2^(-2) + 2^(-3) + 2^(-4)
+    8 + 4 + 2 + 0.5 + 0.25 + 0.125 + 0.0625
+    14 + 0.9375 = 14.9375
+4c. 11111111.11
+    2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 2^0 + 2^(-1) + 2^(-2)
+    128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 + 0.5 + 0.25
+    255 + 0.75 = 255.75
+4d. 11010.0101
+    2^4 + 2^3 + 2^1 + 2^(-2) + 2^(-4)
+    16 + 8 + 2 + 0.25 + 0.0625
+    26 + 0.3125 = 26.3125
+4e. 1010100
+    2^6 + 2^4 + 2^2
+    64 + 16 + 4 = 84
