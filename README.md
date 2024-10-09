@@ -1,3 +1,3 @@
 # Courses
 
-All CS Courses taken so far.
+All CS Courses taken during undergrad.
